@@ -1,5 +1,13 @@
 #pragma once
 
+#include "Okno_uzytkownicy.h"
+#include "Okno_zmiana_hasla.h"
+#include "Okno_klienci.h"
+#include "Okno_samochody.h"
+#include "Okno_pracownik-samochody.h"
+#include "Okno_jazdy_probne.h"
+#include "Okno_sprzedaze.h"
+
 namespace SalonSamochodowy {
 
 	using namespace System;
@@ -35,16 +43,23 @@ namespace SalonSamochodowy {
 			}
 		}
 	private: System::Windows::Forms::Panel^ panel_menu;
+	private: System::Windows::Forms::Button^ btn_sprzedaze;
 	protected:
 
 	protected:
-	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
+
+	private: System::Windows::Forms::Button^ btn_jazdyProbne;
+
+	private: System::Windows::Forms::Button^ btn_pracownikSamochody;
+
+	private: System::Windows::Forms::Button^ btn_samochody;
+
+	private: System::Windows::Forms::Button^ btn_klienci;
+
+	private: System::Windows::Forms::Button^ btn_zmiana_hasla;
+
+	private: System::Windows::Forms::Button^ btn_uzytkownicy;
+
 	private: System::Windows::Forms::Panel^ panel_Logo;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
@@ -61,7 +76,7 @@ namespace SalonSamochodowy {
 		/// <summary>
 		/// Wymagana zmienna projektanta.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -72,13 +87,13 @@ namespace SalonSamochodowy {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Okno_glowne::typeid));
 			this->panel_menu = (gcnew System::Windows::Forms::Panel());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->btn_sprzedaze = (gcnew System::Windows::Forms::Button());
+			this->btn_jazdyProbne = (gcnew System::Windows::Forms::Button());
+			this->btn_pracownikSamochody = (gcnew System::Windows::Forms::Button());
+			this->btn_samochody = (gcnew System::Windows::Forms::Button());
+			this->btn_klienci = (gcnew System::Windows::Forms::Button());
+			this->btn_zmiana_hasla = (gcnew System::Windows::Forms::Button());
+			this->btn_uzytkownicy = (gcnew System::Windows::Forms::Button());
 			this->panel_Logo = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -97,13 +112,13 @@ namespace SalonSamochodowy {
 			// 
 			this->panel_menu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(174)),
 				static_cast<System::Int32>(static_cast<System::Byte>(244)));
-			this->panel_menu->Controls->Add(this->button7);
-			this->panel_menu->Controls->Add(this->button6);
-			this->panel_menu->Controls->Add(this->button5);
-			this->panel_menu->Controls->Add(this->button4);
-			this->panel_menu->Controls->Add(this->button3);
-			this->panel_menu->Controls->Add(this->button2);
-			this->panel_menu->Controls->Add(this->button1);
+			this->panel_menu->Controls->Add(this->btn_sprzedaze);
+			this->panel_menu->Controls->Add(this->btn_jazdyProbne);
+			this->panel_menu->Controls->Add(this->btn_pracownikSamochody);
+			this->panel_menu->Controls->Add(this->btn_samochody);
+			this->panel_menu->Controls->Add(this->btn_klienci);
+			this->panel_menu->Controls->Add(this->btn_zmiana_hasla);
+			this->panel_menu->Controls->Add(this->btn_uzytkownicy);
 			this->panel_menu->Controls->Add(this->panel_Logo);
 			this->panel_menu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel_menu->Location = System::Drawing::Point(0, 0);
@@ -111,158 +126,165 @@ namespace SalonSamochodowy {
 			this->panel_menu->Size = System::Drawing::Size(250, 561);
 			this->panel_menu->TabIndex = 0;
 			// 
-			// button7
+			// btn_sprzedaze
 			// 
-			this->button7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
+			this->btn_sprzedaze->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button7->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button7->FlatAppearance->BorderSize = 0;
-			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button7->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_sprzedaze->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_sprzedaze->FlatAppearance->BorderSize = 0;
+			this->btn_sprzedaze->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_sprzedaze->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button7->ForeColor = System::Drawing::Color::White;
-			this->button7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button7.Image")));
-			this->button7->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button7->Location = System::Drawing::Point(0, 440);
-			this->button7->Name = L"button7";
-			this->button7->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
-			this->button7->Size = System::Drawing::Size(250, 55);
-			this->button7->TabIndex = 7;
-			this->button7->Text = L"  Sprzeda¿e";
-			this->button7->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button7->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button7->UseVisualStyleBackColor = false;
+			this->btn_sprzedaze->ForeColor = System::Drawing::Color::White;
+			this->btn_sprzedaze->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_sprzedaze.Image")));
+			this->btn_sprzedaze->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_sprzedaze->Location = System::Drawing::Point(0, 440);
+			this->btn_sprzedaze->Name = L"btn_sprzedaze";
+			this->btn_sprzedaze->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
+			this->btn_sprzedaze->Size = System::Drawing::Size(250, 55);
+			this->btn_sprzedaze->TabIndex = 7;
+			this->btn_sprzedaze->Text = L"  Sprzeda¿e";
+			this->btn_sprzedaze->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_sprzedaze->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->btn_sprzedaze->UseVisualStyleBackColor = false;
+			this->btn_sprzedaze->Click += gcnew System::EventHandler(this, &Okno_glowne::btn_sprzedaze_Click);
 			// 
-			// button6
+			// btn_jazdyProbne
 			// 
-			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
+			this->btn_jazdyProbne->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button6->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button6->FlatAppearance->BorderSize = 0;
-			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button6->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_jazdyProbne->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_jazdyProbne->FlatAppearance->BorderSize = 0;
+			this->btn_jazdyProbne->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_jazdyProbne->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button6->ForeColor = System::Drawing::Color::White;
-			this->button6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button6.Image")));
-			this->button6->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button6->Location = System::Drawing::Point(0, 385);
-			this->button6->Name = L"button6";
-			this->button6->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
-			this->button6->Size = System::Drawing::Size(250, 55);
-			this->button6->TabIndex = 6;
-			this->button6->Text = L"  Jazdy próbne";
-			this->button6->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button6->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button6->UseVisualStyleBackColor = false;
+			this->btn_jazdyProbne->ForeColor = System::Drawing::Color::White;
+			this->btn_jazdyProbne->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_jazdyProbne.Image")));
+			this->btn_jazdyProbne->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_jazdyProbne->Location = System::Drawing::Point(0, 385);
+			this->btn_jazdyProbne->Name = L"btn_jazdyProbne";
+			this->btn_jazdyProbne->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
+			this->btn_jazdyProbne->Size = System::Drawing::Size(250, 55);
+			this->btn_jazdyProbne->TabIndex = 6;
+			this->btn_jazdyProbne->Text = L"  Jazdy próbne";
+			this->btn_jazdyProbne->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_jazdyProbne->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->btn_jazdyProbne->UseVisualStyleBackColor = false;
+			this->btn_jazdyProbne->Click += gcnew System::EventHandler(this, &Okno_glowne::btn_jazdyProbne_Click);
 			// 
-			// button5
+			// btn_pracownikSamochody
 			// 
-			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
+			this->btn_pracownikSamochody->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(175)), static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->btn_pracownikSamochody->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_pracownikSamochody->FlatAppearance->BorderSize = 0;
+			this->btn_pracownikSamochody->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_pracownikSamochody->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->btn_pracownikSamochody->ForeColor = System::Drawing::Color::White;
+			this->btn_pracownikSamochody->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_pracownikSamochody.Image")));
+			this->btn_pracownikSamochody->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_pracownikSamochody->Location = System::Drawing::Point(0, 330);
+			this->btn_pracownikSamochody->Name = L"btn_pracownikSamochody";
+			this->btn_pracownikSamochody->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
+			this->btn_pracownikSamochody->Size = System::Drawing::Size(250, 55);
+			this->btn_pracownikSamochody->TabIndex = 5;
+			this->btn_pracownikSamochody->Text = L"  Pracownik - Samochody";
+			this->btn_pracownikSamochody->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_pracownikSamochody->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->btn_pracownikSamochody->UseVisualStyleBackColor = false;
+			this->btn_pracownikSamochody->Click += gcnew System::EventHandler(this, &Okno_glowne::btn_pracownikSamochody_Click);
+			// 
+			// btn_samochody
+			// 
+			this->btn_samochody->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button5->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button5->FlatAppearance->BorderSize = 0;
-			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button5->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_samochody->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_samochody->FlatAppearance->BorderSize = 0;
+			this->btn_samochody->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_samochody->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button5->ForeColor = System::Drawing::Color::White;
-			this->button5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.Image")));
-			this->button5->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button5->Location = System::Drawing::Point(0, 330);
-			this->button5->Name = L"button5";
-			this->button5->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
-			this->button5->Size = System::Drawing::Size(250, 55);
-			this->button5->TabIndex = 5;
-			this->button5->Text = L"  Pracownik - Samochody";
-			this->button5->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button5->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button5->UseVisualStyleBackColor = false;
+			this->btn_samochody->ForeColor = System::Drawing::Color::White;
+			this->btn_samochody->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_samochody.Image")));
+			this->btn_samochody->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_samochody->Location = System::Drawing::Point(0, 275);
+			this->btn_samochody->Name = L"btn_samochody";
+			this->btn_samochody->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
+			this->btn_samochody->Size = System::Drawing::Size(250, 55);
+			this->btn_samochody->TabIndex = 4;
+			this->btn_samochody->Text = L"  Samochody";
+			this->btn_samochody->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_samochody->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->btn_samochody->UseVisualStyleBackColor = false;
+			this->btn_samochody->Click += gcnew System::EventHandler(this, &Okno_glowne::btn_samochody_Click);
 			// 
-			// button4
+			// btn_klienci
 			// 
-			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
+			this->btn_klienci->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button4->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button4->FlatAppearance->BorderSize = 0;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_klienci->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_klienci->FlatAppearance->BorderSize = 0;
+			this->btn_klienci->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_klienci->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button4->ForeColor = System::Drawing::Color::White;
-			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
-			this->button4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button4->Location = System::Drawing::Point(0, 275);
-			this->button4->Name = L"button4";
-			this->button4->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
-			this->button4->Size = System::Drawing::Size(250, 55);
-			this->button4->TabIndex = 4;
-			this->button4->Text = L"  Samochody";
-			this->button4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button4->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button4->UseVisualStyleBackColor = false;
+			this->btn_klienci->ForeColor = System::Drawing::Color::White;
+			this->btn_klienci->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_klienci.Image")));
+			this->btn_klienci->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_klienci->Location = System::Drawing::Point(0, 220);
+			this->btn_klienci->Name = L"btn_klienci";
+			this->btn_klienci->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
+			this->btn_klienci->Size = System::Drawing::Size(250, 55);
+			this->btn_klienci->TabIndex = 3;
+			this->btn_klienci->Text = L"  Klienci";
+			this->btn_klienci->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_klienci->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->btn_klienci->UseVisualStyleBackColor = false;
+			this->btn_klienci->Click += gcnew System::EventHandler(this, &Okno_glowne::btn_klienci_Click);
 			// 
-			// button3
+			// btn_zmiana_hasla
 			// 
-			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
+			this->btn_zmiana_hasla->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button3->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button3->FlatAppearance->BorderSize = 0;
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_zmiana_hasla->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_zmiana_hasla->FlatAppearance->BorderSize = 0;
+			this->btn_zmiana_hasla->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_zmiana_hasla->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button3->ForeColor = System::Drawing::Color::White;
-			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
-			this->button3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button3->Location = System::Drawing::Point(0, 220);
-			this->button3->Name = L"button3";
-			this->button3->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
-			this->button3->Size = System::Drawing::Size(250, 55);
-			this->button3->TabIndex = 3;
-			this->button3->Text = L"  Klienci";
-			this->button3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button3->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button3->UseVisualStyleBackColor = false;
+			this->btn_zmiana_hasla->ForeColor = System::Drawing::Color::White;
+			this->btn_zmiana_hasla->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_zmiana_hasla.Image")));
+			this->btn_zmiana_hasla->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_zmiana_hasla->Location = System::Drawing::Point(0, 165);
+			this->btn_zmiana_hasla->Name = L"btn_zmiana_hasla";
+			this->btn_zmiana_hasla->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
+			this->btn_zmiana_hasla->Size = System::Drawing::Size(250, 55);
+			this->btn_zmiana_hasla->TabIndex = 2;
+			this->btn_zmiana_hasla->Text = L"  Zmiana has³a";
+			this->btn_zmiana_hasla->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_zmiana_hasla->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->btn_zmiana_hasla->UseVisualStyleBackColor = false;
+			this->btn_zmiana_hasla->Click += gcnew System::EventHandler(this, &Okno_glowne::btn_zmiana_hasla_Click);
 			// 
-			// button2
+			// btn_uzytkownicy
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
+			this->btn_uzytkownicy->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button2->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btn_uzytkownicy->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btn_uzytkownicy->FlatAppearance->BorderSize = 0;
+			this->btn_uzytkownicy->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_uzytkownicy->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button2->ForeColor = System::Drawing::Color::White;
-			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
-			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button2->Location = System::Drawing::Point(0, 165);
-			this->button2->Name = L"button2";
-			this->button2->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
-			this->button2->Size = System::Drawing::Size(250, 55);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"  Zmiana has³a";
-			this->button2->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button2->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button2->UseVisualStyleBackColor = false;
-			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
-				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
-			this->button1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button1->Location = System::Drawing::Point(0, 110);
-			this->button1->Name = L"button1";
-			this->button1->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
-			this->button1->Size = System::Drawing::Size(250, 55);
-			this->button1->TabIndex = 1;
-			this->button1->Text = L"  U¿ytkownicy";
-			this->button1->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
-			this->button1->UseVisualStyleBackColor = false;
+			this->btn_uzytkownicy->ForeColor = System::Drawing::Color::White;
+			this->btn_uzytkownicy->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_uzytkownicy.Image")));
+			this->btn_uzytkownicy->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btn_uzytkownicy->Location = System::Drawing::Point(0, 110);
+			this->btn_uzytkownicy->Name = L"btn_uzytkownicy";
+			this->btn_uzytkownicy->Padding = System::Windows::Forms::Padding(15, 0, 0, 0);
+			this->btn_uzytkownicy->Size = System::Drawing::Size(250, 55);
+			this->btn_uzytkownicy->TabIndex = 1;
+			this->btn_uzytkownicy->Text = L"  U¿ytkownicy";
+			this->btn_uzytkownicy->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->btn_uzytkownicy->UseVisualStyleBackColor = false;
+			this->btn_uzytkownicy->Click += gcnew System::EventHandler(this, &Okno_glowne::btn_uzytkownicy_Click);
 			// 
 			// panel_Logo
 			// 
@@ -372,5 +394,47 @@ namespace SalonSamochodowy {
 
 		}
 #pragma endregion
-};
+
+
+
+		Form^ activeForm = gcnew Form;
+		// Otwieranie nowej formatki po wciœnieciu na guzik
+		void openChildForm(Form^ childForm) {
+
+			if (activeForm != gcnew Form) {
+				activeForm->Close();
+			}
+
+			activeForm = childForm;
+			childForm->TopLevel = false;
+			childForm->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			childForm->Dock = DockStyle::Fill;
+			panel_glowny->Controls->Add(childForm);
+			panel_glowny->Tag = childForm;
+			childForm->BringToFront();
+			childForm->Show();
+		}
+
+	private: System::Void btn_uzytkownicy_Click(System::Object^ sender, System::EventArgs^ e) {
+		openChildForm(gcnew Okno_uzytkownicy());
+	}
+	private: System::Void btn_zmiana_hasla_Click(System::Object^ sender, System::EventArgs^ e) {
+		openChildForm(gcnew Okno_zmiana_hasla());
+	}
+	private: System::Void btn_klienci_Click(System::Object^ sender, System::EventArgs^ e) {
+		openChildForm(gcnew Okno_klienci());
+	}
+	private: System::Void btn_samochody_Click(System::Object^ sender, System::EventArgs^ e) {
+		openChildForm(gcnew Okno_samochody());
+	}
+	private: System::Void btn_pracownikSamochody_Click(System::Object^ sender, System::EventArgs^ e) {
+		openChildForm(gcnew Okno_pracowniksamochody());
+	}
+	private: System::Void btn_jazdyProbne_Click(System::Object^ sender, System::EventArgs^ e) {
+		openChildForm(gcnew Okno_jazdy_probne());
+	}
+	private: System::Void btn_sprzedaze_Click(System::Object^ sender, System::EventArgs^ e) {
+		openChildForm(gcnew Okno_sprzedaze());
+	}
+	};
 }

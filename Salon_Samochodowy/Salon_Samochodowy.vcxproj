@@ -138,16 +138,44 @@
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</CompileAsManaged>
     </ClCompile>
+    <ClCompile Include="Okno_jazdy_probne.cpp" />
+    <ClCompile Include="Okno_klienci.cpp" />
     <ClCompile Include="Okno_logowania.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</CompileAsManaged>
     </ClCompile>
+    <ClCompile Include="Okno_pracownik-samochody.cpp" />
+    <ClCompile Include="Okno_samochody.cpp" />
+    <ClCompile Include="Okno_sprzedaze.cpp" />
+    <ClCompile Include="Okno_uzytkownicy.cpp" />
+    <ClCompile Include="Okno_zmiana_hasla.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Okno_glowne.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Okno_jazdy_probne.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Okno_klienci.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Okno_logowania.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Okno_pracownik-samochody.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Okno_samochody.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Okno_sprzedaze.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Okno_uzytkownicy.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Okno_zmiana_hasla.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -155,8 +183,29 @@
     <EmbeddedResource Include="Okno_glowne.resx">
       <DependentUpon>Okno_glowne.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Okno_jazdy_probne.resx">
+      <DependentUpon>Okno_jazdy_probne.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Okno_klienci.resx">
+      <DependentUpon>Okno_klienci.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Okno_logowania.resx">
       <DependentUpon>Okno_logowania.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Okno_pracownik-samochody.resx">
+      <DependentUpon>Okno_pracownik-samochody.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Okno_samochody.resx">
+      <DependentUpon>Okno_samochody.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Okno_sprzedaze.resx">
+      <DependentUpon>Okno_sprzedaze.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Okno_uzytkownicy.resx">
+      <DependentUpon>Okno_uzytkownicy.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Okno_zmiana_hasla.resx">
+      <DependentUpon>Okno_zmiana_hasla.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

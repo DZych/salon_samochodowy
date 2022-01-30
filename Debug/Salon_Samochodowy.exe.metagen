@@ -1,5 +1,12 @@
   SalonSamochodowy.Okno_glowne.resources - Embedded, ContainedInManifestFile, 
+  SalonSamochodowy.Okno_jazdy_probne.resources - Embedded, ContainedInManifestFile, 
+  SalonSamochodowy.Okno_klienci.resources - Embedded, ContainedInManifestFile, 
   SalonSamochodowy.Okno_logowania.resources - Embedded, ContainedInManifestFile, 
+  SalonSamochodowy.Okno_pracownik-samochody.resources - Embedded, ContainedInManifestFile, 
+  SalonSamochodowy.Okno_samochody.resources - Embedded, ContainedInManifestFile, 
+  SalonSamochodowy.Okno_sprzedaze.resources - Embedded, ContainedInManifestFile, 
+  SalonSamochodowy.Okno_uzytkownicy.resources - Embedded, ContainedInManifestFile, 
+  SalonSamochodowy.Okno_zmiana_hasla.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Salon_Samochodowy, Version=0.0.*, Culture=Język niezmienny (kraj niezmienny): 
 	hash=SHA1, flags=PublicKey
@@ -15,6 +22,27 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class SalonSamochodowy.Okno_uzytkownicy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SalonSamochodowy.Okno_zmiana_hasla: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SalonSamochodowy.Okno_klienci: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SalonSamochodowy.Okno_samochody: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SalonSamochodowy.Okno_pracowniksamochody: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SalonSamochodowy.Okno_jazdy_probne: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SalonSamochodowy.Okno_sprzedaze: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SalonSamochodowy.Okno_glowne: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

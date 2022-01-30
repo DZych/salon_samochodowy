@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_sprzedaze.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         twAAC7cBSHy2DQAABBxJREFUWEft13to1lUYwPG5izZZs0yMCCulm2jRxS5OBDOoyBKLILIaFF3+6GYS
@@ -142,7 +142,7 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_jazdyProbne.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAABI5JREFUWEftl31o1VUYx3fdcvO1bc6tUJstaS7dXLooWLL9Y2Ro6H8jFBcRiZSS
@@ -167,7 +167,7 @@
         OfdA/xWq6Q+id8MxmPyv5t8Qrt3XmEw/INvB3WJwV6tgIQmUpKS/AT/X3LrAUNrrAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_pracownikSamochody.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAA25JREFUWEftl0tIVVEUhi3fWUqppSU+oBKlIiqQgnRgSlEQ1KRJ0aTCKHHSY1aD
@@ -188,7 +188,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_samochody.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         hgAADoYBFfSI+wAAAq1JREFUWEftlU1IVFEUx0cTKy2pbBVR0WKgD4ShYiBoUUlY0apNwYS50TbVQnFb
@@ -205,7 +205,7 @@
         KcWh5GQyuZvJp3hNh7AbLVQW0NH3v4Mt0eELw6rdqj58+KgiAoHfwpjDh/i8d5IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_klienci.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAABHJJREFUWEfVl21olWUYx/fitnRlTTczNdzAysRBiBoNsghEEERYyoy+JC4/xEAW
@@ -230,7 +230,7 @@
         ot8KU4ZN/y9bXt4tCfN6sPm0k3cAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_zmiana_hasla.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
         1wAADdcBQiibeAAAA9NJREFUWEe1l01IVFEYhjU1QU3FRRkuMqQw3LSJkkooQqQkgwKlTWGlCFbUNgpq
@@ -252,7 +252,7 @@
         n0r9mXSIPgx1gA/hjn1xJAOa6GpcAOyDiFILWyWkpPwDdcMuCTK1SXYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_uzytkownicy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
         1wAADdcBQiibeAAAA39JREFUWEe1l01IVFEUx8uPtA9DCMxQaSG1MHVRQRFSQlBUm2wREdSmIKJdLdtM
