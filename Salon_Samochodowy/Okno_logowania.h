@@ -10,6 +10,8 @@ namespace SalonSamochodowy {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace MySql::Data::MySqlClient;
+
 
 	/// <summary>
 	/// Podsumowanie informacji o Okno_logowania
@@ -38,10 +40,13 @@ namespace SalonSamochodowy {
 		}
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ txt_logowanie_login;
-	private: System::Windows::Forms::TextBox^ txt_logowanie_haslo;
+	private: System::Windows::Forms::TextBox^ txt_login;
+	private: System::Windows::Forms::TextBox^ txt_haslo;
 
-	private: System::Windows::Forms::Button^ button1;
+
+	private: System::Windows::Forms::Button^ btn_zaloguj;
+
+
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
@@ -67,9 +72,9 @@ namespace SalonSamochodowy {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Okno_logowania::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->txt_logowanie_login = (gcnew System::Windows::Forms::TextBox());
-			this->txt_logowanie_haslo = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->txt_login = (gcnew System::Windows::Forms::TextBox());
+			this->txt_haslo = (gcnew System::Windows::Forms::TextBox());
+			this->btn_zaloguj = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -101,47 +106,47 @@ namespace SalonSamochodowy {
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Najlepszy salon samochodowy w Polsce\r\ndla Ciebie i Twojich najbli¿szych";
 			// 
-			// txt_logowanie_login
+			// txt_login
 			// 
-			this->txt_logowanie_login->BackColor = System::Drawing::SystemColors::Window;
-			this->txt_logowanie_login->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
-			this->txt_logowanie_login->ForeColor = System::Drawing::Color::Gray;
-			this->txt_logowanie_login->Location = System::Drawing::Point(25, 208);
-			this->txt_logowanie_login->Name = L"txt_logowanie_login";
-			this->txt_logowanie_login->Size = System::Drawing::Size(379, 31);
-			this->txt_logowanie_login->TabIndex = 2;
-			this->txt_logowanie_login->Text = L"WprowadŸ Login";
-			this->txt_logowanie_login->Enter += gcnew System::EventHandler(this, &Okno_logowania::txt_logowanie_login_Enter);
-			this->txt_logowanie_login->Leave += gcnew System::EventHandler(this, &Okno_logowania::txt_logowanie_login_Leave);
+			this->txt_login->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_login->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
+			this->txt_login->ForeColor = System::Drawing::Color::Gray;
+			this->txt_login->Location = System::Drawing::Point(25, 208);
+			this->txt_login->Name = L"txt_login";
+			this->txt_login->Size = System::Drawing::Size(379, 31);
+			this->txt_login->TabIndex = 2;
+			this->txt_login->Text = L"WprowadŸ Login";
+			this->txt_login->Enter += gcnew System::EventHandler(this, &Okno_logowania::txt_logowanie_login_Enter);
+			this->txt_login->Leave += gcnew System::EventHandler(this, &Okno_logowania::txt_logowanie_login_Leave);
 			// 
-			// txt_logowanie_haslo
+			// txt_haslo
 			// 
-			this->txt_logowanie_haslo->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
-			this->txt_logowanie_haslo->ForeColor = System::Drawing::Color::Gray;
-			this->txt_logowanie_haslo->Location = System::Drawing::Point(25, 245);
-			this->txt_logowanie_haslo->Name = L"txt_logowanie_haslo";
-			this->txt_logowanie_haslo->Size = System::Drawing::Size(379, 31);
-			this->txt_logowanie_haslo->TabIndex = 3;
-			this->txt_logowanie_haslo->Text = L"WprowadŸ Has³o";
-			this->txt_logowanie_haslo->Enter += gcnew System::EventHandler(this, &Okno_logowania::txt_logowanie_haslo_Enter);
-			this->txt_logowanie_haslo->Leave += gcnew System::EventHandler(this, &Okno_logowania::txt_logowanie_haslo_Leave);
+			this->txt_haslo->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
+			this->txt_haslo->ForeColor = System::Drawing::Color::Gray;
+			this->txt_haslo->Location = System::Drawing::Point(25, 245);
+			this->txt_haslo->Name = L"txt_haslo";
+			this->txt_haslo->Size = System::Drawing::Size(379, 31);
+			this->txt_haslo->TabIndex = 3;
+			this->txt_haslo->Text = L"WprowadŸ Has³o";
+			this->txt_haslo->Enter += gcnew System::EventHandler(this, &Okno_logowania::txt_logowanie_haslo_Enter);
+			this->txt_haslo->Leave += gcnew System::EventHandler(this, &Okno_logowania::txt_logowanie_haslo_Leave);
 			// 
-			// button1
+			// btn_zaloguj
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(174)),
+			this->btn_zaloguj->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(174)),
 				static_cast<System::Int32>(static_cast<System::Byte>(244)));
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Poppins", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_zaloguj->FlatAppearance->BorderSize = 0;
+			this->btn_zaloguj->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_zaloguj->Font = (gcnew System::Drawing::Font(L"Poppins", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->button1->ForeColor = System::Drawing::Color::WhiteSmoke;
-			this->button1->Location = System::Drawing::Point(25, 344);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(150, 40);
-			this->button1->TabIndex = 5;
-			this->button1->Text = L"Zaloguj";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &Okno_logowania::button1_Click);
+			this->btn_zaloguj->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->btn_zaloguj->Location = System::Drawing::Point(25, 344);
+			this->btn_zaloguj->Name = L"btn_zaloguj";
+			this->btn_zaloguj->Size = System::Drawing::Size(150, 40);
+			this->btn_zaloguj->TabIndex = 5;
+			this->btn_zaloguj->Text = L"Zaloguj";
+			this->btn_zaloguj->UseVisualStyleBackColor = false;
+			this->btn_zaloguj->Click += gcnew System::EventHandler(this, &Okno_logowania::btn_zaloguj_Click);
 			// 
 			// button2
 			// 
@@ -175,9 +180,9 @@ namespace SalonSamochodowy {
 			this->ClientSize = System::Drawing::Size(850, 500);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->txt_logowanie_haslo);
-			this->Controls->Add(this->txt_logowanie_login);
+			this->Controls->Add(this->btn_zaloguj);
+			this->Controls->Add(this->txt_haslo);
+			this->Controls->Add(this->txt_login);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
@@ -194,39 +199,62 @@ namespace SalonSamochodowy {
 #pragma region Wyglad okna
 
 	private: System::Void txt_logowanie_login_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (txt_logowanie_login->Text == "WprowadŸ Login") {
-			txt_logowanie_login->Text = "";
-			txt_logowanie_login->ForeColor = Color::FromArgb(0, 64, 64, 64);
+		if (txt_login->Text == "WprowadŸ Login") {
+			txt_login->Text = "";
+			txt_login->ForeColor = Color::FromArgb(0, 64, 64, 64);
 		}
 	}
 	private: System::Void txt_logowanie_haslo_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (txt_logowanie_haslo->Text == "WprowadŸ Has³o") {
-			txt_logowanie_haslo->Text = "";
-			txt_logowanie_haslo->ForeColor = Color::FromArgb(0, 64, 64, 64);
+		if (txt_haslo->Text == "WprowadŸ Has³o") {
+			txt_haslo->Text = "";
+			txt_haslo->ForeColor = Color::FromArgb(0, 64, 64, 64);
 		}
-		txt_logowanie_haslo->UseSystemPasswordChar = true;
+		txt_haslo->UseSystemPasswordChar = true;
 	}
 	private: System::Void txt_logowanie_login_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (txt_logowanie_login->Text == "") {
-			txt_logowanie_login->ForeColor = Color::Gray;
-			txt_logowanie_login->Text = "WprowadŸ Login";
+		if (txt_login->Text == "") {
+			txt_login->ForeColor = Color::Gray;
+			txt_login->Text = "WprowadŸ Login";
 		}
 	}
 	private: System::Void txt_logowanie_haslo_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (txt_logowanie_haslo->Text == "") {
-			txt_logowanie_haslo->UseSystemPasswordChar = false;
-			txt_logowanie_haslo->ForeColor = Color::Gray;
-			txt_logowanie_haslo->Text = "WprowadŸ Has³o";
+		if (txt_haslo->Text == "") {
+			txt_haslo->UseSystemPasswordChar = false;
+			txt_haslo->ForeColor = Color::Gray;
+			txt_haslo->Text = "WprowadŸ Has³o";
 		}
 	}
 #pragma endregion
 
+	private: System::Void btn_zaloguj_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ konfiguracja = L"datasource=sql11.freesqldatabase.com; port=3306; username=sql11469083; password=drcZgnw8y5; database=sql11469083";
+
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(konfiguracja);
+		MySqlCommand^ zapytanie = gcnew MySqlCommand("Select * FROM uzytkownicy WHERE login='" + txt_login->Text + "' AND haslo= md5('" + txt_haslo->Text + "');", polaczenie);
+		MySqlDataReader^ wynik_zapytania;
+
+		try {
+			polaczenie->Open();
+			wynik_zapytania = zapytanie->ExecuteReader();
+
+			if (wynik_zapytania->Read()) {
+				int id_uzytkownik = wynik_zapytania->GetInt32(0);
+
+				Okno_glowne^ main_f = gcnew Okno_glowne(id_uzytkownik);
+				this->Hide();
+				main_f->Show();
+			}
+			else {
+				MessageBox::Show("B³êdne dane logowania");
+			}
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+
+		polaczenie->Close();
 
 
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Okno_glowne^ main_f = gcnew Okno_glowne();
-		this->Hide();
-		main_f->Show();
 	}
 	};
 }

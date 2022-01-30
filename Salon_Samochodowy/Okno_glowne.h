@@ -23,9 +23,10 @@ namespace SalonSamochodowy {
 	public ref class Okno_glowne : public System::Windows::Forms::Form
 	{
 	public:
-		Okno_glowne(void)
+		Okno_glowne(int uzytkownik)
 		{
 			InitializeComponent();
+			int id_uzytkownika = uzytkownik;
 			//
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
@@ -394,8 +395,6 @@ namespace SalonSamochodowy {
 
 		}
 #pragma endregion
-
-
 
 		Form^ activeForm = gcnew Form;
 		// Otwieranie nowej formatki po wciœnieciu na guzik
