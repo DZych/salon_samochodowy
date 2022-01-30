@@ -1,0 +1,3 @@
+E:\Salon samochodowy - zaliczenie\Salon_Samochodowy\Salon_Samochodowy\Release\SalonSamochodowy.Okno_logowania.resources
+E:\Salon samochodowy - zaliczenie\Salon_Samochodowy\Salon_Samochodowy\Release\Salon_Samochodowy.vcxproj.GenerateResource.cache
+E:\Salon samochodowy - zaliczenie\Salon_Samochodowy\Salon_Samochodowy\Release\SalonSamochodowy.Okno_glowne.resources

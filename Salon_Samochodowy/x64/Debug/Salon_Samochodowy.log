@@ -1,0 +1,7 @@
+﻿  Microsoft (R) Incremental Linker Version 14.29.30136.0
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  "/OUT:E:\Salon samochodowy - zaliczenie\Salon_Samochodowy\x64\Debug\Salon_Samochodowy.exe" /INCREMENTAL "/ILK:x64\Debug\Salon_Samochodowy.ilk" /NOLOGO /ASSEMBLYRESOURCE:x64\Debug\SalonSamochodowy.Okno_glowne.resources /ASSEMBLYRESOURCE:x64\Debug\SalonSamochodowy.Okno_logowania.resources /MANIFEST "/MANIFESTUAC:level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FULL "/PDB:E:\Salon samochodowy - zaliczenie\Salon_Samochodowy\x64\Debug\Salon_Samochodowy.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS "/PGD:E:\Salon samochodowy - zaliczenie\Salon_Samochodowy\x64\Debug\Salon_Samochodowy.pgd" /LTCG:PGUpdate "/LTCGOUT:x64\Debug\Salon_Samochodowy.iobj" /TLBID:1 "/ENTRY:main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X64 /GENPROFILE x64\Debug\Main.obj 
+  x64\Debug\Okno_glowne.obj 
+  x64\Debug\Okno_logowania.obj 
+  "x64\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.obj" 
+LINK : fatal error LNK1266: błąd odczytywania pliku instrumentacji „E:\Salon samochodowy - zaliczenie\Salon_Samochodowy\x64\Debug\Salon_Samochodowy.pgd”: Nie odnaleziono pliku
