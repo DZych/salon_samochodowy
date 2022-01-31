@@ -7,6 +7,7 @@
 #include "Okno_pracownik-samochody.h"
 #include "Okno_jazdy_probne.h"
 #include "Okno_sprzedaze.h"
+#include <string>
 
 namespace SalonSamochodowy {
 
@@ -23,10 +24,11 @@ namespace SalonSamochodowy {
 	public ref class Okno_glowne : public System::Windows::Forms::Form
 	{
 	public:
+		int id_uzytkownika;
 		Okno_glowne(int uzytkownik)
 		{
 			InitializeComponent();
-			int id_uzytkownika = uzytkownik;
+			id_uzytkownika = uzytkownik;
 			//
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
@@ -414,8 +416,27 @@ namespace SalonSamochodowy {
 			childForm->Show();
 		}
 
+		void ustaw_aktywna_zakladke(Control^ zbiorKontrolek, String^ text_przycisku) {
+			for each (Control ^ element in zbiorKontrolek->Controls) {
+				if (element->GetType() == Button::typeid) {
+					element->BackColor = Color::FromArgb(0, 175, 240);
+				}
+				if (element->Text == text_przycisku) {
+					element->BackColor = Color::FromArgb(0,210, 255);
+
+					// Zmiana koloru przycisku na bia³y oraz dodanie czarnej ikony
+					/*element->BackColor = Color::White;
+					element->ForeColor = Color::FromArgb(64, 64, 64);
+					element->BackgroundImage->FromFile(Application::StartupPath + "..\\..\\img\\uzytkownicy-dark.png");
+					return;*/
+				}
+			}
+		}
+
 	private: System::Void btn_uzytkownicy_Click(System::Object^ sender, System::EventArgs^ e) {
-		openChildForm(gcnew Okno_uzytkownicy());
+		int test = 0;
+		openChildForm(gcnew Okno_uzytkownicy(test));
+		ustaw_aktywna_zakladke(panel_menu, "  U¿ytkownicy");
 	}
 	private: System::Void btn_zmiana_hasla_Click(System::Object^ sender, System::EventArgs^ e) {
 		openChildForm(gcnew Okno_zmiana_hasla());

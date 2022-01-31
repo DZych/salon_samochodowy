@@ -174,6 +174,7 @@ namespace SalonSamochodowy {
 			// 
 			// Okno_logowania
 			// 
+			this->AcceptButton = this->btn_zaloguj;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
@@ -227,8 +228,8 @@ namespace SalonSamochodowy {
 #pragma endregion
 
 	private: System::Void btn_zaloguj_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ konfiguracja = L"datasource=sql11.freesqldatabase.com; port=3306; username=sql11469083; password=drcZgnw8y5; database=sql11469083";
 
+		String^ konfiguracja = L"datasource=sql11.freesqldatabase.com; port=3306; username=sql11469083; password=drcZgnw8y5; database=sql11469083";
 		MySqlConnection^ polaczenie = gcnew MySqlConnection(konfiguracja);
 		MySqlCommand^ zapytanie = gcnew MySqlCommand("Select * FROM uzytkownicy WHERE login='" + txt_login->Text + "' AND haslo= md5('" + txt_haslo->Text + "');", polaczenie);
 		MySqlDataReader^ wynik_zapytania;
@@ -251,10 +252,7 @@ namespace SalonSamochodowy {
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-
 		polaczenie->Close();
-
-
 	}
-	};
+};
 }
