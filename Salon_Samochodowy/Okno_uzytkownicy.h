@@ -1,4 +1,6 @@
 #pragma once
+#include "Narzedzia.h"
+#include "Poloczenie.h"
 
 namespace SalonSamochodowy {
 
@@ -15,19 +17,18 @@ namespace SalonSamochodowy {
 	/// </summary>
 	public ref class Okno_uzytkownicy : public System::Windows::Forms::Form
 	{
-	public:
-		String^ konfiguracja = L"datasource=sql11.freesqldatabase.com; port=3306; username=sql11469083; password=drcZgnw8y5; database=sql11469083";
-
 	private: System::Windows::Forms::TextBox^ txt_imie;
 	private: System::Windows::Forms::TextBox^ txt_nazwisko;
 	private: System::Windows::Forms::TextBox^ txt_login;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
-	public:
+	private: System::Windows::Forms::CheckBox^ chb_pracownik;
 
-		int id_uzytkownika;
+	public:
 		int id_rekordu;
+		int id_uzytkownika;
+		int rodzaj_pracownika;
 
 		Okno_uzytkownicy(int uzytkownik)
 		{
@@ -100,6 +101,7 @@ namespace SalonSamochodowy {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->chb_pracownik = (gcnew System::Windows::Forms::CheckBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dg_uzytkownicy))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -176,6 +178,7 @@ namespace SalonSamochodowy {
 			this->btn_dodaj->TabIndex = 6;
 			this->btn_dodaj->Text = L"Dodaj";
 			this->btn_dodaj->UseVisualStyleBackColor = false;
+			this->btn_dodaj->Click += gcnew System::EventHandler(this, &Okno_uzytkownicy::btn_dodaj_Click);
 			// 
 			// btn_usun
 			// 
@@ -192,6 +195,7 @@ namespace SalonSamochodowy {
 			this->btn_usun->TabIndex = 8;
 			this->btn_usun->Text = L"Usuñ";
 			this->btn_usun->UseVisualStyleBackColor = false;
+			this->btn_usun->Visible = false;
 			this->btn_usun->Click += gcnew System::EventHandler(this, &Okno_uzytkownicy::btn_usun_Click);
 			// 
 			// btn_edytuj
@@ -207,6 +211,8 @@ namespace SalonSamochodowy {
 			this->btn_edytuj->TabIndex = 9;
 			this->btn_edytuj->Text = L"Edytuj";
 			this->btn_edytuj->UseVisualStyleBackColor = false;
+			this->btn_edytuj->Visible = false;
+			this->btn_edytuj->Click += gcnew System::EventHandler(this, &Okno_uzytkownicy::btn_edytuj_Click);
 			// 
 			// txt_szukaj
 			// 
@@ -241,7 +247,8 @@ namespace SalonSamochodowy {
 			// 
 			this->txt_imie->BackColor = System::Drawing::SystemColors::Window;
 			this->txt_imie->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
-			this->txt_imie->ForeColor = System::Drawing::Color::Gray;
+			this->txt_imie->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->txt_imie->Location = System::Drawing::Point(12, 86);
 			this->txt_imie->Name = L"txt_imie";
 			this->txt_imie->Size = System::Drawing::Size(243, 31);
@@ -251,7 +258,8 @@ namespace SalonSamochodowy {
 			// 
 			this->txt_nazwisko->BackColor = System::Drawing::SystemColors::Window;
 			this->txt_nazwisko->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
-			this->txt_nazwisko->ForeColor = System::Drawing::Color::Gray;
+			this->txt_nazwisko->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->txt_nazwisko->Location = System::Drawing::Point(13, 150);
 			this->txt_nazwisko->Name = L"txt_nazwisko";
 			this->txt_nazwisko->Size = System::Drawing::Size(243, 31);
@@ -261,7 +269,8 @@ namespace SalonSamochodowy {
 			// 
 			this->txt_login->BackColor = System::Drawing::SystemColors::Window;
 			this->txt_login->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
-			this->txt_login->ForeColor = System::Drawing::Color::Gray;
+			this->txt_login->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->txt_login->Location = System::Drawing::Point(12, 215);
 			this->txt_login->Name = L"txt_login";
 			this->txt_login->Size = System::Drawing::Size(243, 31);
@@ -303,12 +312,31 @@ namespace SalonSamochodowy {
 			this->label3->TabIndex = 17;
 			this->label3->Text = L"Login";
 			// 
+			// chb_pracownik
+			// 
+			this->chb_pracownik->AutoSize = true;
+			this->chb_pracownik->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->chb_pracownik->FlatAppearance->BorderSize = 0;
+			this->chb_pracownik->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
+			this->chb_pracownik->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->chb_pracownik->Location = System::Drawing::Point(144, 252);
+			this->chb_pracownik->Name = L"chb_pracownik";
+			this->chb_pracownik->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->chb_pracownik->Size = System::Drawing::Size(112, 32);
+			this->chb_pracownik->TabIndex = 19;
+			this->chb_pracownik->Text = L"Pracownik";
+			this->chb_pracownik->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->chb_pracownik->UseVisualStyleBackColor = true;
+			// 
 			// Okno_uzytkownicy
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(834, 561);
+			this->Controls->Add(this->chb_pracownik);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -331,6 +359,49 @@ namespace SalonSamochodowy {
 
 		}
 #pragma endregion
+
+	private: void uzytkownik_rodzaj() {
+		if (chb_pracownik->Checked) {
+			rodzaj_pracownika = 1;
+		}
+		else {
+			rodzaj_pracownika = 0;
+		}
+	}
+
+	private: void ukryj_przyciski() {
+		chb_pracownik->Checked = false;
+		btn_edytuj->Visible = false;
+		btn_usun->Visible = false;
+
+		txt_szukaj->ForeColor = Color::Gray;
+		txt_szukaj->Text = "Wpisz dane u¿ytkownika";
+	}
+
+	private: void odœwie¿_dataGrid() {
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ zapytanie = gcnew MySqlCommand("SELECT uzytkownik_id, imie, nazwisko, login, pracownik FROM uzytkownicy ;", polaczenie);
+
+		try {
+			// wype³nienie datagrida danymi z tabeli uzytkownicy
+			polaczenie->Open();
+			MySqlDataAdapter^ Adapter_danych = gcnew MySqlDataAdapter();
+			Adapter_danych->SelectCommand = zapytanie;
+			DataTable^ Uzytkownicy_tabela = gcnew DataTable();
+			Adapter_danych->Fill(Uzytkownicy_tabela);
+			BindingSource^ zrodloSalon = gcnew BindingSource();
+			zrodloSalon->DataSource = Uzytkownicy_tabela;
+			dg_uzytkownicy->DataSource = zrodloSalon;
+			polaczenie->Close();
+		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+		}
+
+		dg_uzytkownicy->Columns[0]->Visible = false;
+		dg_uzytkownicy->ClearSelection();
+	}
+
 	private: System::Void txt_szukaj_Enter(System::Object^ sender, System::EventArgs^ e) {
 		txt_szukaj->ForeColor = Color::FromArgb(64, 64, 64);
 		txt_szukaj->Text = "";
@@ -338,10 +409,13 @@ namespace SalonSamochodowy {
 
 	private: System::Void btn_szukaj_Click(System::Object^ sender, System::EventArgs^ e) {
 
+
 		if (txt_szukaj->Text == "Wpisz dane u¿ytkownika")
 			txt_szukaj->Text = "";
 
-		MySqlConnection^ polaczenie = gcnew MySqlConnection(konfiguracja);
+		// Mo¿na tutaj wstawiæ funkcje odœwie¿ dataGrid() z opcjonalnym argumentem, który by³bym zapytaniem. 
+
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
 		MySqlCommand^ zapytanie = gcnew MySqlCommand("SELECT uzytkownik_id, imie, nazwisko, login, pracownik FROM uzytkownicy WHERE concat (imie, nazwisko, login) LIKE '%" + txt_szukaj->Text + "%';", polaczenie);
 
 		try {
@@ -362,47 +436,132 @@ namespace SalonSamochodowy {
 		polaczenie->Close();
 		dg_uzytkownicy->Columns[0]->Visible = false;
 	}
+
 	private: System::Void dg_uzytkownicy_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		if (e->RowIndex >= 0) {
 			id_rekordu = Convert::ToUInt32(dg_uzytkownicy->Rows[e->RowIndex]->Cells[0]->Value);
 			txt_imie->Text = dg_uzytkownicy->Rows[e->RowIndex]->Cells["imie"]->Value->ToString();
 			txt_nazwisko->Text = dg_uzytkownicy->Rows[e->RowIndex]->Cells["nazwisko"]->Value->ToString();
 			txt_login->Text = dg_uzytkownicy->Rows[e->RowIndex]->Cells["login"]->Value->ToString();
+			chb_pracownik->Checked = Convert::ToBoolean(dg_uzytkownicy->Rows[e->RowIndex]->Cells["pracownik"]->Value);
 		}
+
+		btn_edytuj->Visible = true;
+		btn_usun->Visible = true;
 	}
+
 	private: System::Void btn_usun_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (id_rekordu == 1) {
 			MessageBox::Show("Nie mo¿na usun¹æ u¿ytkownika admin");
 			return;
 		}
-			MySqlConnection^ laczBaze = gcnew MySqlConnection(konfiguracja);
-			MySqlCommand^ polecenie = laczBaze->CreateCommand();
-			MySqlTransaction^ transkacja;
-			laczBaze->Open();
-			transkacja = laczBaze->BeginTransaction(IsolationLevel::ReadCommitted);
+		MySqlConnection^ laczBaze = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = laczBaze->CreateCommand();
+		MySqlTransaction^ transkacja;
+		laczBaze->Open();
+		transkacja = laczBaze->BeginTransaction(IsolationLevel::ReadCommitted);
 
-			polecenie->Connection = laczBaze;
-			polecenie->Transaction = transkacja;
+		polecenie->Connection = laczBaze;
+		polecenie->Transaction = transkacja;
 
-			try {
-				if (MessageBox::Show("Czy na pewno usun¹æ u¿ytkownika" + txt_login->Text + "?", "Uwaga!!!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+		try {
+			if (MessageBox::Show("Czy na pewno usun¹æ u¿ytkownika " + txt_login->Text + "?", "Uwaga!!!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 
-					polecenie->CommandText = "DELETE FROM uzytkownicy WHERE uzytkownik_id = " + id_rekordu + ";";
-					polecenie->ExecuteNonQuery();
+				polecenie->CommandText = "DELETE FROM uzytkownicy WHERE uzytkownik_id = " + id_rekordu + ";";
+				polecenie->ExecuteNonQuery();
 
 
-					transkacja->Commit();
-					MessageBox::Show("U¿ytkownika " + txt_login->Text + "zosta³ usuniêty z bazy danych");
-				}
-
-			}
-			catch (Exception^ komunikat) {
-				MessageBox::Show(komunikat->Message);
-				transkacja->Rollback();
-				transkacja->Rollback();
+				transkacja->Commit();
+				MessageBox::Show("U¿ytkownik " + txt_login->Text + " zosta³ usuniêty z bazy danych");
 			}
 
 		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+			transkacja->Rollback();
+			transkacja->Rollback();
+		}
+		odœwie¿_dataGrid();
+		Narzedzia::wyczysc_textboxy(this);
+		ukryj_przyciski();
+	}
+
+	private: System::Void btn_edytuj_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (id_rekordu == 1) {
+			MessageBox::Show("Nie mo¿na zmieniæ u¿ytkownika admin");
+			return;
+		}
+
+		if (txt_imie->Text->Length < 3 || txt_nazwisko->Text->Length < 3 || txt_login->Text->Length <= 4) {
+			MessageBox::Show("WprowadŸ dane poprawnie!");
+			return;
+		}
+		else {
+			MessageBox::Show("Dane wprowadzone poprawnie");
+			uzytkownik_rodzaj();
+		}
+
+		MySqlConnection^ laczBaze = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = laczBaze->CreateCommand();
+		MySqlTransaction^ transkacja;
+		laczBaze->Open();
+		transkacja = laczBaze->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		polecenie->Connection = laczBaze;
+		polecenie->Transaction = transkacja;
+
+		try {
+			polecenie->CommandText = "Update uzytkownicy SET imie='" + txt_imie->Text + "', nazwisko='" + txt_nazwisko->Text + "', login = '" + txt_login->Text + "', haslo = '" + txt_login->Text + "', pracownik = " + rodzaj_pracownika + " WHERE uzytkownik_id = '" + id_rekordu + "';";
+			polecenie->ExecuteNonQuery();
+			MessageBox::Show("U¿tykownika " + txt_login->Text + " zosta³ zmodyfikowany");
+			transkacja->Commit();
+		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+			transkacja->Rollback();
+		}
+		laczBaze->Close();
+		odœwie¿_dataGrid();
+		Narzedzia::wyczysc_textboxy(this);
+		ukryj_przyciski();
+
+	}
+
+	private: System::Void btn_dodaj_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_imie->Text->Length < 3 || txt_nazwisko->Text->Length < 3 || txt_login->Text->Length <= 3) {
+			MessageBox::Show("WprowadŸ dane poprawnie!");
+			return;
+		}
+		else {
+			MessageBox::Show("Dane wprowadzone poprawnie");
+			uzytkownik_rodzaj();
+		}
+
+		MySqlConnection^ laczBaze = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = laczBaze->CreateCommand();
+		MySqlTransaction^ transkacja;
+		laczBaze->Open();
+		transkacja = laczBaze->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		polecenie->Connection = laczBaze;
+		polecenie->Transaction = transkacja;
+
+		try {
+			polecenie->CommandText = "INSERT INTO uzytkownicy SET imie='" + txt_imie->Text + "', nazwisko='" + txt_nazwisko->Text + "', login='" + txt_login->Text + "', haslo='" + txt_login->Text + "', pracownik=" + rodzaj_pracownika + ";";
+			polecenie->ExecuteNonQuery();
+			MessageBox::Show("U¿ytkownik " + txt_login->Text + " zosta³ dodany od bazy danych");
+			transkacja->Commit();
+		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+			transkacja->Rollback();
+		}
+		laczBaze->Close();
+
+		odœwie¿_dataGrid();
+		Narzedzia::wyczysc_textboxy(this);
+		ukryj_przyciski();
+	}
 
 	};
-	}
+}

@@ -232,16 +232,27 @@ Assembly System.Xml.XPath, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f
 	hash=None, flags=None
 Assembly System.Xml.XPath.XDocument, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
+Class SalonSamochodowy.Narzedzia: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    wyczysc_textboxy(Form): PrivateScope, Public, Static, HideBySig
+Class SalonSamochodowy.Poloczenie: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String konfiguracja : Public, Static
 Class SalonSamochodowy.Okno_uzytkownicy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.String konfiguracja : Public
-    Int32 id_uzytkownika : Public
     Int32 id_rekordu : Public
+    Int32 id_uzytkownika : Public
+    Int32 rodzaj_pracownika : Public
 Class SalonSamochodowy.Okno_zmiana_hasla: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 id_uzytkownika : Public
+    System.String login : Public
 Class SalonSamochodowy.Okno_klienci: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -259,9 +270,10 @@ Class SalonSamochodowy.Okno_sprzedaze: AutoLayout, AnsiClass, Class, Public, Bef
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SalonSamochodowy.Okno_glowne: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Int32 id_uzytkownika : Public
+    System.String login : Public
 Class SalonSamochodowy.Okno_logowania: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

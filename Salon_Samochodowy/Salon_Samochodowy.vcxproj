@@ -135,6 +135,7 @@
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</CompileAsManaged>
     </ClCompile>
+    <ClCompile Include="Narzedzia.cpp" />
     <ClCompile Include="Okno_glowne.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</CompileAsManaged>
@@ -150,8 +151,10 @@
     <ClCompile Include="Okno_sprzedaze.cpp" />
     <ClCompile Include="Okno_uzytkownicy.cpp" />
     <ClCompile Include="Okno_zmiana_hasla.cpp" />
+    <ClCompile Include="Poloczenie.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Narzedzia.h" />
     <ClInclude Include="Okno_glowne.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -179,6 +182,7 @@
     <ClInclude Include="Okno_zmiana_hasla.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Poloczenie.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Okno_glowne.resx">

@@ -25,10 +25,13 @@ namespace SalonSamochodowy {
 	{
 	public:
 		int id_uzytkownika;
-		Okno_glowne(int uzytkownik)
+		String^ login;
+
+		Okno_glowne(int uzytkownik, String^ nazwa_uzytkownika)
 		{
 			InitializeComponent();
 			id_uzytkownika = uzytkownik;
+			login = nazwa_uzytkownika;
 			//
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
@@ -434,12 +437,12 @@ namespace SalonSamochodowy {
 		}
 
 	private: System::Void btn_uzytkownicy_Click(System::Object^ sender, System::EventArgs^ e) {
-		int test = 0;
-		openChildForm(gcnew Okno_uzytkownicy(test));
+		openChildForm(gcnew Okno_uzytkownicy(id_uzytkownika));
 		ustaw_aktywna_zakladke(panel_menu, "  U¿ytkownicy");
 	}
 	private: System::Void btn_zmiana_hasla_Click(System::Object^ sender, System::EventArgs^ e) {
-		openChildForm(gcnew Okno_zmiana_hasla());
+		openChildForm(gcnew Okno_zmiana_hasla(id_uzytkownika, login));
+		ustaw_aktywna_zakladke(panel_menu, "  Zmiana has³a");
 	}
 	private: System::Void btn_klienci_Click(System::Object^ sender, System::EventArgs^ e) {
 		openChildForm(gcnew Okno_klienci());
