@@ -240,6 +240,8 @@ Class SalonSamochodowy.Poloczenie: AutoLayout, AnsiClass, Class, Public, BeforeF
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.String konfiguracja : Public, Static
+  Methods:
+    odswiez_datagird(DataGridView, String): PrivateScope, Public, Static, HideBySig
 Class SalonSamochodowy.Okno_uzytkownicy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -256,9 +258,13 @@ Class SalonSamochodowy.Okno_zmiana_hasla: AutoLayout, AnsiClass, Class, Public, 
 Class SalonSamochodowy.Okno_klienci: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 id_rekordu : Public
 Class SalonSamochodowy.Okno_samochody: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 id_rekordu : Public
 Class SalonSamochodowy.Okno_pracowniksamochody: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

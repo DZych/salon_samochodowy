@@ -18,6 +18,9 @@ namespace SalonSamochodowy {
 	public ref class Okno_klienci : public System::Windows::Forms::Form
 	{
 	public:
+
+		int id_rekordu;
+
 		Okno_klienci(void)
 		{
 			InitializeComponent();
@@ -75,7 +78,7 @@ namespace SalonSamochodowy {
 		/// <summary>
 		/// Wymagana zmienna projektanta.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -84,9 +87,9 @@ namespace SalonSamochodowy {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->txt_imie = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -310,6 +313,7 @@ namespace SalonSamochodowy {
 			this->btn_edytuj->Text = L"Edytuj";
 			this->btn_edytuj->UseVisualStyleBackColor = false;
 			this->btn_edytuj->Visible = false;
+			this->btn_edytuj->Click += gcnew System::EventHandler(this, &Okno_klienci::btn_edytuj_Click);
 			// 
 			// btn_usun
 			// 
@@ -327,6 +331,7 @@ namespace SalonSamochodowy {
 			this->btn_usun->Text = L"Usuñ";
 			this->btn_usun->UseVisualStyleBackColor = false;
 			this->btn_usun->Visible = false;
+			this->btn_usun->Click += gcnew System::EventHandler(this, &Okno_klienci::btn_usun_Click);
 			// 
 			// btn_dodaj
 			// 
@@ -343,6 +348,7 @@ namespace SalonSamochodowy {
 			this->btn_dodaj->TabIndex = 32;
 			this->btn_dodaj->Text = L"Dodaj";
 			this->btn_dodaj->UseVisualStyleBackColor = false;
+			this->btn_dodaj->Click += gcnew System::EventHandler(this, &Okno_klienci::btn_dodaj_Click);
 			// 
 			// dg_klienci
 			// 
@@ -354,52 +360,53 @@ namespace SalonSamochodowy {
 			this->dg_klienci->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dg_klienci->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->dg_klienci->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
 				static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			dataGridViewCellStyle4->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
+			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dg_klienci->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dg_klienci->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dg_klienci->ColumnHeadersHeight = 30;
 			this->dg_klienci->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
-			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Poppins", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Poppins", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			dataGridViewCellStyle5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+			dataGridViewCellStyle2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(184)), static_cast<System::Int32>(static_cast<System::Byte>(249)));
-			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dg_klienci->DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dg_klienci->DefaultCellStyle = dataGridViewCellStyle2;
 			this->dg_klienci->EnableHeadersVisualStyles = false;
 			this->dg_klienci->GridColor = System::Drawing::Color::White;
 			this->dg_klienci->Location = System::Drawing::Point(12, 49);
 			this->dg_klienci->Name = L"dg_klienci";
 			this->dg_klienci->ReadOnly = true;
-			dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle6->BackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle3->BackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Poppins", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			dataGridViewCellStyle6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+			dataGridViewCellStyle3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)));
-			dataGridViewCellStyle6->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
 				static_cast<System::Int32>(static_cast<System::Byte>(180)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle6->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle6->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dg_klienci->RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dg_klienci->RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this->dg_klienci->RowHeadersVisible = false;
 			this->dg_klienci->RowHeadersWidth = 40;
 			this->dg_klienci->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
 			this->dg_klienci->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dg_klienci->Size = System::Drawing::Size(807, 328);
 			this->dg_klienci->TabIndex = 35;
+			this->dg_klienci->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Okno_klienci::dg_klienci_CellClick);
 			// 
 			// btn_szukaj
 			// 
@@ -467,6 +474,12 @@ namespace SalonSamochodowy {
 
 		}
 #pragma endregion
+
+		void ukryj_przyciski() {
+			btn_edytuj->Visible = false;
+			btn_usun->Visible = false;
+		}
+
 	private: System::Void btn_szukaj_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		if (txt_szukaj->Text == "Wpisz dane klienta")
@@ -494,6 +507,125 @@ namespace SalonSamochodowy {
 		}
 		polaczenie->Close();
 		dg_klienci->Columns[0]->Visible = false;
+		dg_klienci->ClearSelection();
 	}
-};
+
+	private: System::Void dg_klienci_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		if (e->RowIndex >= 0) {
+			id_rekordu = Convert::ToUInt32(dg_klienci->Rows[e->RowIndex]->Cells[0]->Value);
+			txt_imie->Text = dg_klienci->Rows[e->RowIndex]->Cells["imie"]->Value->ToString();
+			txt_nazwisko->Text = dg_klienci->Rows[e->RowIndex]->Cells["nazwisko"]->Value->ToString();
+			txt_email->Text = dg_klienci->Rows[e->RowIndex]->Cells["email"]->Value->ToString();
+			txt_nrTelefonu->Text = dg_klienci->Rows[e->RowIndex]->Cells["telefon"]->Value->ToString();
+			txt_ulica->Text = dg_klienci->Rows[e->RowIndex]->Cells["ulica"]->Value->ToString();
+			txt_nrLokalu->Text = dg_klienci->Rows[e->RowIndex]->Cells["numer"]->Value->ToString();
+			txt_kodPocztowy->Text = dg_klienci->Rows[e->RowIndex]->Cells["kod_pocztowy"]->Value->ToString();
+			txt_miejscowosc->Text = dg_klienci->Rows[e->RowIndex]->Cells["miejscowosc"]->Value->ToString();
+		}
+
+		btn_edytuj->Visible = true;
+		btn_usun->Visible = true;
+	}
+
+	private: System::Void btn_dodaj_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_imie->Text->Length < 3 || txt_nazwisko->Text->Length < 3 || txt_email->Text->Length <= 3 || txt_nrTelefonu->Text->Length < 9 || txt_ulica->Text->Length < 3 || txt_nrLokalu->Text->Length <= 0 || txt_kodPocztowy->Text->Length <= 0 || txt_miejscowosc->Text->Length <= 3) {
+			MessageBox::Show("WprowadŸ dane poprawnie!");
+			return;
+		}
+		else {
+			MessageBox::Show("Dane wprowadzone poprawnie");
+		}
+
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = polaczenie->CreateCommand();
+		MySqlTransaction^ transkacja;
+		polaczenie->Open();
+		transkacja = polaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		polecenie->Connection = polaczenie;
+		polecenie->Transaction = transkacja;
+
+		try {
+			polecenie->CommandText = "INSERT INTO klienci SET imie='" + txt_imie->Text + "', nazwisko='" + txt_nazwisko->Text + "', email='" + txt_email->Text + "', telefon='" + txt_nrTelefonu->Text + "', ulica='" + txt_ulica->Text + "', numer='" + txt_nrLokalu->Text + "', kod_pocztowy='" + txt_kodPocztowy->Text + "', miejscowosc='" + txt_miejscowosc->Text + "';";
+			polecenie->ExecuteNonQuery();
+			MessageBox::Show("Klient " + txt_imie->Text + " " + txt_nazwisko->Text + " zosta³ dodany od bazy danych");
+			transkacja->Commit();
+		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+			transkacja->Rollback();
+		}
+		polaczenie->Close();
+		Poloczenie::odswiez_datagird(dg_klienci, "SELECT * FROM klienci;");
+		Narzedzia::wyczysc_textboxy(this);
+		ukryj_przyciski();
+	}
+
+	private: System::Void btn_usun_Click(System::Object^ sender, System::EventArgs^ e) {
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = polaczenie->CreateCommand();
+		MySqlTransaction^ transkacja;
+		polaczenie->Open();
+		transkacja = polaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		polecenie->Connection = polaczenie;
+		polecenie->Transaction = transkacja;
+
+		try {
+			if (MessageBox::Show("Czy na pewno usun¹æ klienta " + txt_imie->Text + " " + txt_nazwisko->Text + "?", "Uwaga!!!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+
+				polecenie->CommandText = "DELETE FROM klienci WHERE klient_id = " + id_rekordu + ";";
+				polecenie->ExecuteNonQuery();
+
+
+				transkacja->Commit();
+				MessageBox::Show("Klient " + txt_imie->Text + " " + txt_nazwisko->Text + " zosta³ usuniêty z bazy danych");
+			}
+
+		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+			transkacja->Rollback();
+			transkacja->Rollback();
+		}
+		polaczenie->Close();
+		Poloczenie::odswiez_datagird(dg_klienci, "SELECT * FROM klienci;");
+		Narzedzia::wyczysc_textboxy(this);
+		ukryj_przyciski();
+	}
+
+	private: System::Void btn_edytuj_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_imie->Text->Length < 3 || txt_nazwisko->Text->Length < 3 || txt_email->Text->Length <= 3 || txt_nrTelefonu->Text->Length < 9 || txt_ulica->Text->Length < 3 || txt_nrLokalu->Text->Length <= 0 || txt_kodPocztowy->Text->Length <= 0 || txt_miejscowosc->Text->Length <= 3) {
+			MessageBox::Show("WprowadŸ dane poprawnie!");
+			return;
+		}
+		else {
+			MessageBox::Show("Dane wprowadzone poprawnie");
+		}
+
+		MySqlConnection^ poloaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = poloaczenie->CreateCommand();
+		MySqlTransaction^ transkacja;
+		poloaczenie->Open();
+		transkacja = poloaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		polecenie->Connection = poloaczenie;
+		polecenie->Transaction = transkacja;
+
+		try {
+			polecenie->CommandText = "UPDATE klienci SET imie='" + txt_imie->Text + "', nazwisko='" + txt_nazwisko->Text + "', email='" + txt_email->Text + "', telefon='" + txt_nrTelefonu->Text + "', ulica='" + txt_ulica->Text + "', numer='" + txt_nrLokalu->Text + "', kod_pocztowy='" + txt_kodPocztowy->Text + "', miejscowosc='" + txt_miejscowosc->Text + "' WHERE klient_id = " + id_rekordu + ";";
+			polecenie->ExecuteNonQuery();
+			MessageBox::Show("Klient " + txt_imie->Text + " " + txt_nazwisko->Text + " zosta³ zmodyfikowany");
+			transkacja->Commit();
+		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+			transkacja->Rollback();
+		}
+		poloaczenie->Close();
+		Poloczenie::odswiez_datagird(dg_klienci, "SELECT * FROM klienci;");
+		Narzedzia::wyczysc_textboxy(this);
+		ukryj_przyciski();
+	}
+	};
 }

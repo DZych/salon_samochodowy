@@ -18,6 +18,9 @@ namespace SalonSamochodowy {
 	public ref class Okno_samochody : public System::Windows::Forms::Form
 	{
 	public:
+
+		int id_rekordu;
+
 		Okno_samochody(void)
 		{
 			InitializeComponent();
@@ -68,7 +71,7 @@ namespace SalonSamochodowy {
 		/// <summary>
 		/// Wymagana zmienna projektanta.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -189,6 +192,7 @@ namespace SalonSamochodowy {
 			this->dg_samochody->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dg_samochody->Size = System::Drawing::Size(807, 328);
 			this->dg_samochody->TabIndex = 57;
+			this->dg_samochody->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Okno_samochody::dg_samochody_CellClick);
 			// 
 			// btn_edytuj
 			// 
@@ -204,6 +208,7 @@ namespace SalonSamochodowy {
 			this->btn_edytuj->Text = L"Edytuj";
 			this->btn_edytuj->UseVisualStyleBackColor = false;
 			this->btn_edytuj->Visible = false;
+			this->btn_edytuj->Click += gcnew System::EventHandler(this, &Okno_samochody::btn_edytuj_Click);
 			// 
 			// btn_usun
 			// 
@@ -221,6 +226,7 @@ namespace SalonSamochodowy {
 			this->btn_usun->Text = L"Usuñ";
 			this->btn_usun->UseVisualStyleBackColor = false;
 			this->btn_usun->Visible = false;
+			this->btn_usun->Click += gcnew System::EventHandler(this, &Okno_samochody::btn_usun_Click);
 			// 
 			// btn_dodaj
 			// 
@@ -237,6 +243,7 @@ namespace SalonSamochodowy {
 			this->btn_dodaj->TabIndex = 54;
 			this->btn_dodaj->Text = L"Dodaj";
 			this->btn_dodaj->UseVisualStyleBackColor = false;
+			this->btn_dodaj->Click += gcnew System::EventHandler(this, &Okno_samochody::btn_dodaj_Click);
 			// 
 			// label8
 			// 
@@ -276,7 +283,7 @@ namespace SalonSamochodowy {
 			// txt_opis
 			// 
 			this->txt_opis->BackColor = System::Drawing::SystemColors::Window;
-			this->txt_opis->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
+			this->txt_opis->Font = (gcnew System::Drawing::Font(L"Poppins", 8));
 			this->txt_opis->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->txt_opis->Location = System::Drawing::Point(647, 383);
@@ -461,6 +468,12 @@ namespace SalonSamochodowy {
 
 		}
 #pragma endregion
+
+	void ukryj_przyciski() {
+			btn_edytuj->Visible = false;
+			btn_usun->Visible = false;
+		}
+
 	private: System::Void btn_szukaj_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		if (txt_szukaj->Text == "Wpisz dane samochodu")
@@ -488,6 +501,127 @@ namespace SalonSamochodowy {
 		}
 		polaczenie->Close();
 		dg_samochody->Columns[0]->Visible = false;
+		ukryj_przyciski();
+		dg_samochody->ClearSelection();
 	}
-};
+
+	private: System::Void dg_samochody_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		if (e->RowIndex >= 0) {
+			id_rekordu = Convert::ToUInt32(dg_samochody->Rows[e->RowIndex]->Cells[0]->Value);
+			txt_marka->Text = dg_samochody->Rows[e->RowIndex]->Cells["marka"]->Value->ToString();
+			txt_model->Text = dg_samochody->Rows[e->RowIndex]->Cells["model"]->Value->ToString();
+			txt_silnik->Text = dg_samochody->Rows[e->RowIndex]->Cells["silnik"]->Value->ToString();
+			txt_nrVin->Text = dg_samochody->Rows[e->RowIndex]->Cells["numer_VIN"]->Value->ToString();
+			txt_kolor->Text = dg_samochody->Rows[e->RowIndex]->Cells["kolor"]->Value->ToString();
+			txt_wyposazenie->Text = dg_samochody->Rows[e->RowIndex]->Cells["wyposazenie"]->Value->ToString();
+			txt_opis->Text = dg_samochody->Rows[e->RowIndex]->Cells["opis"]->Value->ToString();
+			txt_iloscSztuk->Text = dg_samochody->Rows[e->RowIndex]->Cells["ilosc_sztuk"]->Value->ToString();
+		}
+
+		btn_edytuj->Visible = true;
+		btn_usun->Visible = true;
+	}
+
+	private: System::Void btn_dodaj_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (txt_marka->Text->Length < 3 || txt_model->Text->Length < 3 || txt_kolor->Text->Length <= 3 || txt_silnik->Text->Length <= 1 || txt_nrVin->Text->Length < 17 || txt_wyposazenie->Text->Length <= 3 || txt_iloscSztuk->Text->Length <= 0) {
+			MessageBox::Show("WprowadŸ dane poprawnie!");
+			return;
+		}
+		else {
+			MessageBox::Show("Dane wprowadzone poprawnie");
+		}
+
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = polaczenie->CreateCommand();
+		MySqlTransaction^ transkacja;
+		polaczenie->Open();
+		transkacja = polaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		polecenie->Connection = polaczenie;
+		polecenie->Transaction = transkacja;
+
+		try {
+			polecenie->CommandText = "INSERT INTO samochody SET marka='" + txt_marka->Text + "', model='" + txt_model->Text + "', silnik='" + txt_silnik->Text + "', numer_VIN='" + txt_nrVin->Text + "', kolor='" + txt_kolor->Text + "', wyposazenie='" + txt_wyposazenie->Text + "', opis='" + txt_opis->Text + "', ilosc_sztuk='" + txt_iloscSztuk->Text + "';";
+			polecenie->ExecuteNonQuery();
+			MessageBox::Show(txt_marka->Text + " " + txt_model->Text + " zosta³ dodany od bazy danych");
+			transkacja->Commit();
+		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+			transkacja->Rollback();
+		}
+		polaczenie->Close();
+		Poloczenie::odswiez_datagird(dg_samochody, "SELECT * FROM samochody;");
+		Narzedzia::wyczysc_textboxy(this);
+		ukryj_przyciski();
+	}
+
+	private: System::Void btn_usun_Click(System::Object^ sender, System::EventArgs^ e) {
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = polaczenie->CreateCommand();
+		MySqlTransaction^ transkacja;
+		polaczenie->Open();
+		transkacja = polaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		polecenie->Connection = polaczenie;
+		polecenie->Transaction = transkacja;
+
+		try {
+			if (MessageBox::Show("Czy na pewno usun¹æ samochód " + txt_marka->Text + " " + txt_model->Text + "?", "Uwaga!!!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+
+				polecenie->CommandText = "DELETE FROM samochody WHERE samochody_id = " + id_rekordu + ";";
+				polecenie->ExecuteNonQuery();
+
+
+				transkacja->Commit();
+				MessageBox::Show(txt_marka->Text + " " + txt_model->Text + " zosta³ usuniêty z bazy danych");
+			}
+
+		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+			transkacja->Rollback();
+			transkacja->Rollback();
+		}
+		polaczenie->Close();
+		Poloczenie::odswiez_datagird(dg_samochody, "SELECT * FROM samochody;");
+		Narzedzia::wyczysc_textboxy(this);
+		ukryj_przyciski();
+	}
+
+	private: System::Void btn_edytuj_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		if (txt_marka->Text->Length < 3 || txt_model->Text->Length < 3 || txt_kolor->Text->Length <= 3 || txt_silnik->Text->Length <= 1 || txt_nrVin->Text->Length < 17 || txt_wyposazenie->Text->Length <= 3 || txt_iloscSztuk->Text->Length <= 0) {
+			MessageBox::Show("WprowadŸ dane poprawnie!");
+			return;
+		}
+		else {
+			MessageBox::Show("Dane wprowadzone poprawnie");
+		}
+
+		MySqlConnection^ poloaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = poloaczenie->CreateCommand();
+		MySqlTransaction^ transkacja;
+		poloaczenie->Open();
+		transkacja = poloaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
+
+		polecenie->Connection = poloaczenie;
+		polecenie->Transaction = transkacja;
+
+		try {
+			polecenie->CommandText = "UPDATE samochody SET marka='" + txt_marka->Text + "', model='" + txt_model->Text + "', silnik='" + txt_silnik->Text + "', numer_VIN='" + txt_nrVin->Text + "', kolor='" + txt_kolor->Text + "', wyposazenie='" + txt_wyposazenie->Text + "', opis='" + txt_opis->Text + "', ilosc_sztuk='" + txt_iloscSztuk->Text + "' WHERE samochody_id = " + id_rekordu + ";";
+			polecenie->ExecuteNonQuery();
+			MessageBox::Show("Samochód " +  txt_marka->Text + " " + txt_model->Text + " zosta³ zmodyfikowany");
+			transkacja->Commit();
+		}
+		catch (Exception^ komunikat) {
+			MessageBox::Show(komunikat->Message);
+			transkacja->Rollback();
+		}
+		poloaczenie->Close();
+		Poloczenie::odswiez_datagird(dg_samochody, "SELECT * FROM samochody;");
+		Narzedzia::wyczysc_textboxy(this);
+		ukryj_przyciski();
+	}
+	};
 }

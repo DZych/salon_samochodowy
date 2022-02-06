@@ -446,9 +446,11 @@ namespace SalonSamochodowy {
 	}
 	private: System::Void btn_klienci_Click(System::Object^ sender, System::EventArgs^ e) {
 		openChildForm(gcnew Okno_klienci());
+		ustaw_aktywna_zakladke(panel_menu, "  Klienci");
 	}
 	private: System::Void btn_samochody_Click(System::Object^ sender, System::EventArgs^ e) {
 		openChildForm(gcnew Okno_samochody());
+		ustaw_aktywna_zakladke(panel_menu, "  Samochody");
 	}
 	private: System::Void btn_pracownikSamochody_Click(System::Object^ sender, System::EventArgs^ e) {
 		openChildForm(gcnew Okno_pracowniksamochody());

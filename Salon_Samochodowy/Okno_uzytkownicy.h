@@ -378,30 +378,6 @@ namespace SalonSamochodowy {
 		txt_szukaj->Text = "Wpisz dane u¿ytkownika";
 	}
 
-	private: void odœwie¿_dataGrid() {
-		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
-		MySqlCommand^ zapytanie = gcnew MySqlCommand("SELECT uzytkownik_id, imie, nazwisko, login, pracownik FROM uzytkownicy ;", polaczenie);
-
-		try {
-			// wype³nienie datagrida danymi z tabeli uzytkownicy
-			polaczenie->Open();
-			MySqlDataAdapter^ Adapter_danych = gcnew MySqlDataAdapter();
-			Adapter_danych->SelectCommand = zapytanie;
-			DataTable^ Uzytkownicy_tabela = gcnew DataTable();
-			Adapter_danych->Fill(Uzytkownicy_tabela);
-			BindingSource^ zrodloSalon = gcnew BindingSource();
-			zrodloSalon->DataSource = Uzytkownicy_tabela;
-			dg_uzytkownicy->DataSource = zrodloSalon;
-			polaczenie->Close();
-		}
-		catch (Exception^ komunikat) {
-			MessageBox::Show(komunikat->Message);
-		}
-
-		dg_uzytkownicy->Columns[0]->Visible = false;
-		dg_uzytkownicy->ClearSelection();
-	}
-
 	private: System::Void txt_szukaj_Enter(System::Object^ sender, System::EventArgs^ e) {
 		txt_szukaj->ForeColor = Color::FromArgb(64, 64, 64);
 		txt_szukaj->Text = "";
@@ -435,6 +411,7 @@ namespace SalonSamochodowy {
 		}
 		polaczenie->Close();
 		dg_uzytkownicy->Columns[0]->Visible = false;
+		dg_uzytkownicy->ClearSelection();
 	}
 
 	private: System::Void dg_uzytkownicy_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -455,13 +432,13 @@ namespace SalonSamochodowy {
 			MessageBox::Show("Nie mo¿na usun¹æ u¿ytkownika admin");
 			return;
 		}
-		MySqlConnection^ laczBaze = gcnew MySqlConnection(Poloczenie::konfiguracja);
-		MySqlCommand^ polecenie = laczBaze->CreateCommand();
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = polaczenie->CreateCommand();
 		MySqlTransaction^ transkacja;
-		laczBaze->Open();
-		transkacja = laczBaze->BeginTransaction(IsolationLevel::ReadCommitted);
+		polaczenie->Open();
+		transkacja = polaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
 
-		polecenie->Connection = laczBaze;
+		polecenie->Connection = polaczenie;
 		polecenie->Transaction = transkacja;
 
 		try {
@@ -481,7 +458,8 @@ namespace SalonSamochodowy {
 			transkacja->Rollback();
 			transkacja->Rollback();
 		}
-		odœwie¿_dataGrid();
+		polaczenie->Close();
+		Poloczenie::odswiez_datagird(dg_uzytkownicy, "SELECT uzytkownik_id, imie, nazwisko, login, pracownik FROM uzytkownicy ;");
 		Narzedzia::wyczysc_textboxy(this);
 		ukryj_przyciski();
 	}
@@ -501,13 +479,13 @@ namespace SalonSamochodowy {
 			uzytkownik_rodzaj();
 		}
 
-		MySqlConnection^ laczBaze = gcnew MySqlConnection(Poloczenie::konfiguracja);
-		MySqlCommand^ polecenie = laczBaze->CreateCommand();
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = polaczenie->CreateCommand();
 		MySqlTransaction^ transkacja;
-		laczBaze->Open();
-		transkacja = laczBaze->BeginTransaction(IsolationLevel::ReadCommitted);
+		polaczenie->Open();
+		transkacja = polaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
 
-		polecenie->Connection = laczBaze;
+		polecenie->Connection = polaczenie;
 		polecenie->Transaction = transkacja;
 
 		try {
@@ -520,8 +498,8 @@ namespace SalonSamochodowy {
 			MessageBox::Show(komunikat->Message);
 			transkacja->Rollback();
 		}
-		laczBaze->Close();
-		odœwie¿_dataGrid();
+		polaczenie->Close();
+		Poloczenie::odswiez_datagird(dg_uzytkownicy, "SELECT uzytkownik_id, imie, nazwisko, login, pracownik FROM uzytkownicy ;");
 		Narzedzia::wyczysc_textboxy(this);
 		ukryj_przyciski();
 
@@ -537,13 +515,13 @@ namespace SalonSamochodowy {
 			uzytkownik_rodzaj();
 		}
 
-		MySqlConnection^ laczBaze = gcnew MySqlConnection(Poloczenie::konfiguracja);
-		MySqlCommand^ polecenie = laczBaze->CreateCommand();
+		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+		MySqlCommand^ polecenie = polaczenie->CreateCommand();
 		MySqlTransaction^ transkacja;
-		laczBaze->Open();
-		transkacja = laczBaze->BeginTransaction(IsolationLevel::ReadCommitted);
+		polaczenie->Open();
+		transkacja = polaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
 
-		polecenie->Connection = laczBaze;
+		polecenie->Connection = polaczenie;
 		polecenie->Transaction = transkacja;
 
 		try {
@@ -556,9 +534,8 @@ namespace SalonSamochodowy {
 			MessageBox::Show(komunikat->Message);
 			transkacja->Rollback();
 		}
-		laczBaze->Close();
-
-		odœwie¿_dataGrid();
+		polaczenie->Close();
+		Poloczenie::odswiez_datagird(dg_uzytkownicy, "SELECT uzytkownik_id, imie, nazwisko, login, pracownik FROM uzytkownicy ;");
 		Narzedzia::wyczysc_textboxy(this);
 		ukryj_przyciski();
 	}
