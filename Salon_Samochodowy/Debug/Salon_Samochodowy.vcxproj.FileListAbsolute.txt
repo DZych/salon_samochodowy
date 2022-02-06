@@ -14,3 +14,16 @@ C:\Users\Dominik\Documents\GitHub\salon_samochodowy\Salon_Samochodowy\Debug\Salo
 C:\Users\Dominik\Documents\GitHub\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_zmiana_hasla.resources
 C:\Users\Dominik\Documents\GitHub\salon_samochodowy\Salon_Samochodowy\Debug\Salon_Samochodowy.vcxproj.GenerateResource.cache
 C:\Users\Dominik\Documents\GitHub\salon_samochodowy\Salon_Samochodowy\Debug\Salon_Samochodowy.vcxproj.CopyComplete
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Debug\Salon_Samochodowy.exe.config
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\Salon_Samochodowy.exe.config
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_glowne.resources
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_jazdy_probne.resources
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_klienci.resources
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_logowania.resources
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_pracownik-samochody.resources
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_samochody.resources
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_sprzedaze.resources
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_uzytkownicy.resources
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\SalonSamochodowy.Okno_zmiana_hasla.resources
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\Salon_Samochodowy.vcxproj.GenerateResource.cache
+C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Salon_Samochodowy\Debug\Salon_Samochodowy.vcxproj.CopyComplete

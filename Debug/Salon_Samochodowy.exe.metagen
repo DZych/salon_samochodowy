@@ -274,6 +274,11 @@ Class SalonSamochodowy.Okno_jazdy_probne: AutoLayout, AnsiClass, Class, Public, 
 Class SalonSamochodowy.Okno_sprzedaze: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 id_rekordu : Public
+    Int32 id_uzytkownik : Public
+    Int32 id_samochod : Public
+    Int32 id_klient : Public
 Class SalonSamochodowy.Okno_glowne: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
