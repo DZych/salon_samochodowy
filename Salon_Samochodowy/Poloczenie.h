@@ -9,7 +9,7 @@ namespace SalonSamochodowy {
 	public ref class Poloczenie
 	{
 	public:
-		static String^ konfiguracja = L"datasource=sql11.freesqldatabase.com; port=3306; username=sql11469083; password=drcZgnw8y5; database=sql11469083";
+		static String^ konfiguracja = L"datasource=sql11.freesqldatabase.com; port=3306; username=sql11469083; password=drcZgnw8y5; database=sql11469083;convert zero datetime=True";
 
 		static void odswiez_datagird(DataGridView^ dg, String^ zapytanie) {
 			MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);

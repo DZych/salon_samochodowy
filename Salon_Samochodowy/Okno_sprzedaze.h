@@ -21,7 +21,11 @@ namespace SalonSamochodowy {
 		int id_rekordu;
 		int id_uzytkownik;
 		int id_samochod;
-	
+
+	public:
+
+	public:
+
 	public:
 	
 
@@ -33,6 +37,7 @@ namespace SalonSamochodowy {
 		Okno_sprzedaze(void)
 		{
 			InitializeComponent();
+			
 			//
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
@@ -479,7 +484,7 @@ private: System::Void dg_SPuzytkownicy_CellClick(System::Object^ sender, System:
 	if (Convert::ToUInt32(dg_SPuzytkownicy->Rows[e->RowIndex]->Cells[0]->Value) > 0) {
 		id_uzytkownik = Convert::ToUInt32(dg_SPuzytkownicy->Rows[e->RowIndex]->Cells[0]->Value);
 	}
-	MessageBox::Show(""+Convert::ToUInt32(dg_SPuzytkownicy->Rows[e->RowIndex]->Cells[0]->Value));
+	
 
 	
 		
