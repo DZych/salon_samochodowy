@@ -278,6 +278,7 @@ Class SalonSamochodowy.Okno_jazdy_probne: AutoLayout, AnsiClass, Class, Public, 
     Int32 id_rekordu : Public
     Int32 id_uzytkownik : Public
     Int32 id_samochod : Public
+    Int32 id_jazda_probna : Public
     Int32 id_klient : Public
 Class SalonSamochodowy.Okno_sprzedaze: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
@@ -286,6 +287,7 @@ Class SalonSamochodowy.Okno_sprzedaze: AutoLayout, AnsiClass, Class, Public, Bef
     Int32 id_rekordu : Public
     Int32 id_uzytkownik : Public
     Int32 id_samochod : Public
+    Int32 id_sprzedarz : Public
     Int32 id_klient : Public
 Class SalonSamochodowy.Okno_glowne: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

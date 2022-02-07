@@ -21,6 +21,12 @@ namespace SalonSamochodowy {
 		int id_rekordu;
 		int id_uzytkownik;
 		int id_samochod;
+		int id_sprzedarz;
+	
+	public:
+
+	public:
+	
 
 	public:
 
@@ -57,6 +63,10 @@ namespace SalonSamochodowy {
 	private: System::Windows::Forms::TextBox^ txt_SPuzytkownik;
 
 	protected:
+	private: System::Windows::Forms::Button^ btn_SPusun;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
@@ -95,11 +105,11 @@ namespace SalonSamochodowy {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle11 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle12 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle13 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle14 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle15 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->txt_SPuzytkownik = (gcnew System::Windows::Forms::TextBox());
 			this->txt_SPkilent = (gcnew System::Windows::Forms::TextBox());
 			this->txt_SPsamochod = (gcnew System::Windows::Forms::TextBox());
@@ -115,6 +125,10 @@ namespace SalonSamochodowy {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->btn_SPusun = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dg_SPuzytkownicy))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dg_SPklienci))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dg_SPsamochody))->BeginInit();
@@ -164,17 +178,17 @@ namespace SalonSamochodowy {
 			this->dg_SPuzytkownicy->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dg_SPuzytkownicy->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->dg_SPuzytkownicy->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle11->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
+				static_cast<System::Int32>(static_cast<System::Byte>(237)));
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(238)));
-			dataGridViewCellStyle11->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle11->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle11->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle11->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dg_SPuzytkownicy->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dg_SPuzytkownicy->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dg_SPuzytkownicy->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dg_SPuzytkownicy->EnableHeadersVisualStyles = false;
 			this->dg_SPuzytkownicy->GridColor = System::Drawing::Color::White;
@@ -191,27 +205,27 @@ namespace SalonSamochodowy {
 			this->dg_SPklienci->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dg_SPklienci->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->dg_SPklienci->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle12->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle12->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
+				static_cast<System::Int32>(static_cast<System::Byte>(237)));
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(238)));
-			dataGridViewCellStyle12->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle12->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle12->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle12->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dg_SPklienci->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dg_SPklienci->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this->dg_SPklienci->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			dataGridViewCellStyle13->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle13->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle3->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(238)));
-			dataGridViewCellStyle13->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle13->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
+			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle13->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle13->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dg_SPklienci->DefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dg_SPklienci->DefaultCellStyle = dataGridViewCellStyle3;
 			this->dg_SPklienci->EnableHeadersVisualStyles = false;
 			this->dg_SPklienci->GridColor = System::Drawing::Color::White;
 			this->dg_SPklienci->Location = System::Drawing::Point(487, 192);
@@ -227,17 +241,17 @@ namespace SalonSamochodowy {
 			this->dg_SPsamochody->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dg_SPsamochody->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->dg_SPsamochody->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle14->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle14->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
+				static_cast<System::Int32>(static_cast<System::Byte>(237)));
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(238)));
-			dataGridViewCellStyle14->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle14->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
+			dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle14->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle14->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dg_SPsamochody->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dg_SPsamochody->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this->dg_SPsamochody->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dg_SPsamochody->EnableHeadersVisualStyles = false;
 			this->dg_SPsamochody->GridColor = System::Drawing::Color::White;
@@ -254,17 +268,17 @@ namespace SalonSamochodowy {
 			this->dg_SPjsprzedaze->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dg_SPjsprzedaze->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::None;
 			this->dg_SPjsprzedaze->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::None;
-			dataGridViewCellStyle15->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle15->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
-				static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)), static_cast<System::Int32>(static_cast<System::Byte>(152)),
+				static_cast<System::Int32>(static_cast<System::Byte>(237)));
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(238)));
-			dataGridViewCellStyle15->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle15->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
+			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(75)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)), static_cast<System::Int32>(static_cast<System::Byte>(237)));
-			dataGridViewCellStyle15->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle15->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dg_SPjsprzedaze->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dg_SPjsprzedaze->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this->dg_SPjsprzedaze->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dg_SPjsprzedaze->EnableHeadersVisualStyles = false;
 			this->dg_SPjsprzedaze->GridColor = System::Drawing::Color::White;
@@ -273,6 +287,7 @@ namespace SalonSamochodowy {
 			this->dg_SPjsprzedaze->RowHeadersVisible = false;
 			this->dg_SPjsprzedaze->Size = System::Drawing::Size(364, 125);
 			this->dg_SPjsprzedaze->TabIndex = 7;
+			this->dg_SPjsprzedaze->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Okno_sprzedaze::dg_SPjsprzedaze_CellClick);
 			this->dg_SPjsprzedaze->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Okno_sprzedaze::dg_SPjsprzedaze_CellContentClick);
 			// 
 			// txt_SPcena
@@ -344,12 +359,60 @@ namespace SalonSamochodowy {
 			this->label5->TabIndex = 14;
 			this->label5->Text = L"Sprzedaze";
 			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(22, 6);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(57, 13);
+			this->label6->TabIndex = 15;
+			this->label6->Text = L"Pracownik";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(22, 45);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(33, 13);
+			this->label7->TabIndex = 16;
+			this->label7->Text = L"Klient";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(22, 82);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(58, 13);
+			this->label8->TabIndex = 17;
+			this->label8->Text = L"Samochód";
+			// 
+			// btn_SPusun
+			// 
+			this->btn_SPusun->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
+				static_cast<System::Int32>(static_cast<System::Byte>(46)));
+			this->btn_SPusun->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_SPusun->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->btn_SPusun->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->btn_SPusun->Location = System::Drawing::Point(177, 268);
+			this->btn_SPusun->Name = L"btn_SPusun";
+			this->btn_SPusun->Size = System::Drawing::Size(94, 33);
+			this->btn_SPusun->TabIndex = 18;
+			this->btn_SPusun->Text = L"Usun";
+			this->btn_SPusun->UseVisualStyleBackColor = false;
+			this->btn_SPusun->Visible = false;
+			this->btn_SPusun->Click += gcnew System::EventHandler(this, &Okno_sprzedaze::btn_SPusun_Click);
+			// 
 			// Okno_sprzedaze
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(834, 561);
+			this->Controls->Add(this->btn_SPusun);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -382,8 +445,9 @@ namespace SalonSamochodowy {
 
 	private: Void pokaz_sprzedaze() 
 	{
+		
 		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
-		MySqlCommand^ zapytanie1 = gcnew MySqlCommand("select uzytkownicy.login, samochody.marka, klienci.imie, klienci.nazwisko, sprzedaze.cena from uzytkownicy  inner join sprzedaze on uzytkownicy.uzytkownik_id=sprzedaze.uzytkownik_id inner join samochody on samochody.samochody_id=sprzedaze.samochod_id inner join klienci on klienci.klient_id=sprzedaze.klient_id;", polaczenie);
+		MySqlCommand^ zapytanie1 = gcnew MySqlCommand("select sprzedaze.sprzedaze_id, uzytkownicy.login, samochody.marka, klienci.imie, klienci.nazwisko, sprzedaze.cena from uzytkownicy  inner join sprzedaze on uzytkownicy.uzytkownik_id=sprzedaze.uzytkownik_id inner join samochody on samochody.samochody_id=sprzedaze.samochod_id inner join klienci on klienci.klient_id=sprzedaze.klient_id;", polaczenie);
 
 		try {
 			// wype³nienie datagrida danymi z tabeli uzytkownicy
@@ -401,7 +465,7 @@ namespace SalonSamochodowy {
 			MessageBox::Show(ex->Message);
 		}
 		polaczenie->Close();
-		dg_SPuzytkownicy->Columns[0]->Visible = false;
+		
 	
 		
 	
@@ -430,6 +494,7 @@ namespace SalonSamochodowy {
 		}
 		polaczenie->Close();
 		dg_SPuzytkownicy->Columns[0]->Visible = false;
+		
 		//dg_SPuzytkownicy->ClearSelection();
 
 
@@ -477,7 +542,9 @@ namespace SalonSamochodowy {
 		polaczenie3->Close();
 		dg_SPklienci->Columns[0]->Visible = false;
 		dg_SPklienci->ClearSelection();
+		dg_SPuzytkownicy->Columns[0]->Visible = false;
 		pokaz_sprzedaze();
+		
 
 	}
 private: System::Void dg_SPuzytkownicy_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -546,6 +613,52 @@ private: System::Void btn_SPdodaj_Click(System::Object^ sender, System::EventArg
 	pokaz_sprzedaze();
 }
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btn_SPusun_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+	MySqlCommand^ polecenie = polaczenie->CreateCommand();
+	MySqlTransaction^ transkacja;
+	polaczenie->Open();
+	transkacja = polaczenie->BeginTransaction(IsolationLevel::ReadCommitted);
+
+	polecenie->Connection = polaczenie;
+	polecenie->Transaction = transkacja;
+
+	try {
+		if (MessageBox::Show("Czy na pewno usun¹æ sprzedaz ?", "Uwaga!!!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+
+
+
+			polecenie->CommandText = "DELETE FROM sprzedaze WHERE sprzedaze_id = " + id_sprzedarz + ";";
+			polecenie->ExecuteNonQuery();
+
+			
+
+
+			transkacja->Commit();
+			MessageBox::Show("Sprzedaz zosta³a usuniêta z bazy danych");
+		}
+
+	}
+	catch (Exception^ komunikat) {
+		MessageBox::Show(komunikat->Message);
+		transkacja->Rollback();
+		transkacja->Rollback();
+	}
+	polaczenie->Close();
+	pokaz_sprzedaze();
+	btn_SPusun->Visible = false;
+	
+	
+
+
+}
+private: System::Void dg_SPjsprzedaze_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+	id_sprzedarz = Convert::ToUInt32(dg_SPjsprzedaze->Rows[e->RowIndex]->Cells[0]->Value);
+	btn_SPusun->Visible = true;
+
 }
 };
 }
