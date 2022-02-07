@@ -1,16 +1,7 @@
-﻿  Main.cpp
-  Narzedzia.cpp
-  Okno_glowne.cpp
-  Okno_jazdy_probne.cpp
-  Okno_klienci.cpp
+﻿  Okno_glowne.cpp
   Okno_logowania.cpp
-  Okno_pracownik-samochody.cpp
-  Okno_samochody.cpp
   Okno_sprzedaze.cpp
   Okno_uzytkownicy.cpp
-  Okno_zmiana_hasla.cpp
-  Poloczenie.cpp
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   Generowanie kodu...
   Main.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
-  Salon_Samochodowy.vcxproj -> C:\Users\Adam\Desktop\ProjektSalon\salon_samochodowy\Debug\Salon_Samochodowy.exe
+  Salon_Samochodowy.vcxproj -> C:\Users\Dominik\Documents\GitHub\salon_samochodowy\Debug\Salon_Samochodowy.exe

@@ -28,17 +28,69 @@ namespace SalonSamochodowy {
 	public:
 		int id_rekordu;
 		int id_uzytkownika;
-		int rodzaj_pracownika;
+	private: System::Windows::Forms::GroupBox^ gb_godzinyPracy;
+	private: System::Windows::Forms::TextBox^ txt_niedz_do;
+	public:
 
-		Okno_uzytkownicy(int uzytkownik)
-		{
-			InitializeComponent();
-			id_uzytkownika = uzytkownik;
+	public:
 
-			//
-			//TODO: W tym miejscu dodaj kod konstruktora
-			//
-		}
+	private: System::Windows::Forms::TextBox^ txt_niedz_od;
+
+	private: System::Windows::Forms::TextBox^ txt_sob_do;
+
+	private: System::Windows::Forms::TextBox^ txt_sob_od;
+
+	private: System::Windows::Forms::TextBox^ txt_pt_do;
+
+	private: System::Windows::Forms::TextBox^ txt_pt_od;
+
+	private: System::Windows::Forms::TextBox^ txt_czw_do;
+
+	private: System::Windows::Forms::TextBox^ txt_czw_od;
+
+	private: System::Windows::Forms::TextBox^ txt_sr_do;
+
+	private: System::Windows::Forms::TextBox^ txt_sr_od;
+
+	private: System::Windows::Forms::TextBox^ txt_wt_do;
+
+
+	private: System::Windows::Forms::TextBox^ txt_wt_od;
+
+	private: System::Windows::Forms::TextBox^ txt_pon_do;
+
+	private: System::Windows::Forms::TextBox^ txt_pon_od;
+
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Button^ btn_11_19;
+
+	private: System::Windows::Forms::Button^ btn_10_18;
+
+	private: System::Windows::Forms::Button^ btn_9_17;
+
+	private: System::Windows::Forms::Button^ btn_8_16;
+
+	private: System::Windows::Forms::Button^ btn_7_15;
+
+		   int rodzaj_pracownika;
+
+	public:  Okno_uzytkownicy(int uzytkownik)
+	{
+		InitializeComponent();
+		id_uzytkownika = uzytkownik;
+
+		//
+		//TODO: W tym miejscu dodaj kod konstruktora
+		//
+	}
 	private: System::Windows::Forms::TextBox^ txt_szukaj;
 	public:
 
@@ -102,7 +154,37 @@ namespace SalonSamochodowy {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->chb_pracownik = (gcnew System::Windows::Forms::CheckBox());
+			this->gb_godzinyPracy = (gcnew System::Windows::Forms::GroupBox());
+			this->btn_11_19 = (gcnew System::Windows::Forms::Button());
+			this->btn_10_18 = (gcnew System::Windows::Forms::Button());
+			this->btn_9_17 = (gcnew System::Windows::Forms::Button());
+			this->btn_8_16 = (gcnew System::Windows::Forms::Button());
+			this->btn_7_15 = (gcnew System::Windows::Forms::Button());
+			this->txt_niedz_do = (gcnew System::Windows::Forms::TextBox());
+			this->txt_niedz_od = (gcnew System::Windows::Forms::TextBox());
+			this->txt_sob_do = (gcnew System::Windows::Forms::TextBox());
+			this->txt_sob_od = (gcnew System::Windows::Forms::TextBox());
+			this->txt_pt_do = (gcnew System::Windows::Forms::TextBox());
+			this->txt_pt_od = (gcnew System::Windows::Forms::TextBox());
+			this->txt_czw_do = (gcnew System::Windows::Forms::TextBox());
+			this->txt_czw_od = (gcnew System::Windows::Forms::TextBox());
+			this->txt_sr_do = (gcnew System::Windows::Forms::TextBox());
+			this->txt_sr_od = (gcnew System::Windows::Forms::TextBox());
+			this->txt_wt_do = (gcnew System::Windows::Forms::TextBox());
+			this->txt_wt_od = (gcnew System::Windows::Forms::TextBox());
+			this->txt_pon_do = (gcnew System::Windows::Forms::TextBox());
+			this->txt_pon_od = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dg_uzytkownicy))->BeginInit();
+			this->gb_godzinyPracy->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dg_uzytkownicy
@@ -249,7 +331,7 @@ namespace SalonSamochodowy {
 			this->txt_imie->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
 			this->txt_imie->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->txt_imie->Location = System::Drawing::Point(12, 86);
+			this->txt_imie->Location = System::Drawing::Point(12, 77);
 			this->txt_imie->Name = L"txt_imie";
 			this->txt_imie->Size = System::Drawing::Size(243, 31);
 			this->txt_imie->TabIndex = 12;
@@ -260,7 +342,7 @@ namespace SalonSamochodowy {
 			this->txt_nazwisko->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
 			this->txt_nazwisko->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->txt_nazwisko->Location = System::Drawing::Point(13, 150);
+			this->txt_nazwisko->Location = System::Drawing::Point(12, 142);
 			this->txt_nazwisko->Name = L"txt_nazwisko";
 			this->txt_nazwisko->Size = System::Drawing::Size(243, 31);
 			this->txt_nazwisko->TabIndex = 13;
@@ -271,7 +353,7 @@ namespace SalonSamochodowy {
 			this->txt_login->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
 			this->txt_login->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->txt_login->Location = System::Drawing::Point(12, 215);
+			this->txt_login->Location = System::Drawing::Point(12, 207);
 			this->txt_login->Name = L"txt_login";
 			this->txt_login->Size = System::Drawing::Size(243, 31);
 			this->txt_login->TabIndex = 14;
@@ -282,7 +364,7 @@ namespace SalonSamochodowy {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->label1->Location = System::Drawing::Point(8, 55);
+			this->label1->Location = System::Drawing::Point(7, 46);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(46, 28);
 			this->label1->TabIndex = 15;
@@ -294,7 +376,7 @@ namespace SalonSamochodowy {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->label2->Location = System::Drawing::Point(8, 120);
+			this->label2->Location = System::Drawing::Point(8, 111);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(84, 28);
 			this->label2->TabIndex = 16;
@@ -306,7 +388,7 @@ namespace SalonSamochodowy {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->label3->Location = System::Drawing::Point(8, 184);
+			this->label3->Location = System::Drawing::Point(8, 176);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(54, 28);
 			this->label3->TabIndex = 17;
@@ -321,7 +403,7 @@ namespace SalonSamochodowy {
 			this->chb_pracownik->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
 			this->chb_pracownik->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->chb_pracownik->Location = System::Drawing::Point(144, 252);
+			this->chb_pracownik->Location = System::Drawing::Point(143, 244);
 			this->chb_pracownik->Name = L"chb_pracownik";
 			this->chb_pracownik->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->chb_pracownik->Size = System::Drawing::Size(112, 32);
@@ -329,6 +411,373 @@ namespace SalonSamochodowy {
 			this->chb_pracownik->Text = L"Pracownik";
 			this->chb_pracownik->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->chb_pracownik->UseVisualStyleBackColor = true;
+			this->chb_pracownik->CheckedChanged += gcnew System::EventHandler(this, &Okno_uzytkownicy::chb_pracownik_CheckedChanged);
+			// 
+			// gb_godzinyPracy
+			// 
+			this->gb_godzinyPracy->Controls->Add(this->btn_11_19);
+			this->gb_godzinyPracy->Controls->Add(this->btn_10_18);
+			this->gb_godzinyPracy->Controls->Add(this->btn_9_17);
+			this->gb_godzinyPracy->Controls->Add(this->btn_8_16);
+			this->gb_godzinyPracy->Controls->Add(this->btn_7_15);
+			this->gb_godzinyPracy->Controls->Add(this->txt_niedz_do);
+			this->gb_godzinyPracy->Controls->Add(this->txt_niedz_od);
+			this->gb_godzinyPracy->Controls->Add(this->txt_sob_do);
+			this->gb_godzinyPracy->Controls->Add(this->txt_sob_od);
+			this->gb_godzinyPracy->Controls->Add(this->txt_pt_do);
+			this->gb_godzinyPracy->Controls->Add(this->txt_pt_od);
+			this->gb_godzinyPracy->Controls->Add(this->txt_czw_do);
+			this->gb_godzinyPracy->Controls->Add(this->txt_czw_od);
+			this->gb_godzinyPracy->Controls->Add(this->txt_sr_do);
+			this->gb_godzinyPracy->Controls->Add(this->txt_sr_od);
+			this->gb_godzinyPracy->Controls->Add(this->txt_wt_do);
+			this->gb_godzinyPracy->Controls->Add(this->txt_wt_od);
+			this->gb_godzinyPracy->Controls->Add(this->txt_pon_do);
+			this->gb_godzinyPracy->Controls->Add(this->txt_pon_od);
+			this->gb_godzinyPracy->Controls->Add(this->label4);
+			this->gb_godzinyPracy->Controls->Add(this->label15);
+			this->gb_godzinyPracy->Controls->Add(this->label14);
+			this->gb_godzinyPracy->Controls->Add(this->label12);
+			this->gb_godzinyPracy->Controls->Add(this->label13);
+			this->gb_godzinyPracy->Controls->Add(this->label10);
+			this->gb_godzinyPracy->Controls->Add(this->label11);
+			this->gb_godzinyPracy->Controls->Add(this->label9);
+			this->gb_godzinyPracy->Controls->Add(this->label8);
+			this->gb_godzinyPracy->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->gb_godzinyPracy->Font = (gcnew System::Drawing::Font(L"Poppins", 12));
+			this->gb_godzinyPracy->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->gb_godzinyPracy->Location = System::Drawing::Point(12, 282);
+			this->gb_godzinyPracy->Name = L"gb_godzinyPracy";
+			this->gb_godzinyPracy->Size = System::Drawing::Size(331, 221);
+			this->gb_godzinyPracy->TabIndex = 20;
+			this->gb_godzinyPracy->TabStop = false;
+			this->gb_godzinyPracy->Text = L"Godziny Pracy";
+			this->gb_godzinyPracy->Visible = false;
+			// 
+			// btn_11_19
+			// 
+			this->btn_11_19->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(174)),
+				static_cast<System::Int32>(static_cast<System::Byte>(244)));
+			this->btn_11_19->FlatAppearance->BorderSize = 0;
+			this->btn_11_19->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_11_19->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->btn_11_19->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->btn_11_19->Location = System::Drawing::Point(226, 180);
+			this->btn_11_19->Name = L"btn_11_19";
+			this->btn_11_19->Size = System::Drawing::Size(99, 29);
+			this->btn_11_19->TabIndex = 45;
+			this->btn_11_19->Text = L"11:00 - 19:00";
+			this->btn_11_19->UseVisualStyleBackColor = false;
+			this->btn_11_19->Click += gcnew System::EventHandler(this, &Okno_uzytkownicy::btn_11_19_Click);
+			// 
+			// btn_10_18
+			// 
+			this->btn_10_18->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(174)),
+				static_cast<System::Int32>(static_cast<System::Byte>(244)));
+			this->btn_10_18->FlatAppearance->BorderSize = 0;
+			this->btn_10_18->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_10_18->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->btn_10_18->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->btn_10_18->Location = System::Drawing::Point(226, 145);
+			this->btn_10_18->Name = L"btn_10_18";
+			this->btn_10_18->Size = System::Drawing::Size(99, 29);
+			this->btn_10_18->TabIndex = 44;
+			this->btn_10_18->Text = L"10:00 - 18:00";
+			this->btn_10_18->UseVisualStyleBackColor = false;
+			this->btn_10_18->Click += gcnew System::EventHandler(this, &Okno_uzytkownicy::btn_10_18_Click);
+			// 
+			// btn_9_17
+			// 
+			this->btn_9_17->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(174)),
+				static_cast<System::Int32>(static_cast<System::Byte>(244)));
+			this->btn_9_17->FlatAppearance->BorderSize = 0;
+			this->btn_9_17->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_9_17->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->btn_9_17->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->btn_9_17->Location = System::Drawing::Point(226, 110);
+			this->btn_9_17->Name = L"btn_9_17";
+			this->btn_9_17->Size = System::Drawing::Size(99, 29);
+			this->btn_9_17->TabIndex = 43;
+			this->btn_9_17->Text = L"9:00 - 17:00";
+			this->btn_9_17->UseVisualStyleBackColor = false;
+			this->btn_9_17->Click += gcnew System::EventHandler(this, &Okno_uzytkownicy::btn_9_17_Click);
+			// 
+			// btn_8_16
+			// 
+			this->btn_8_16->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(174)),
+				static_cast<System::Int32>(static_cast<System::Byte>(244)));
+			this->btn_8_16->FlatAppearance->BorderSize = 0;
+			this->btn_8_16->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_8_16->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->btn_8_16->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->btn_8_16->Location = System::Drawing::Point(226, 77);
+			this->btn_8_16->Name = L"btn_8_16";
+			this->btn_8_16->Size = System::Drawing::Size(99, 29);
+			this->btn_8_16->TabIndex = 42;
+			this->btn_8_16->Text = L"8:00 - 16:00";
+			this->btn_8_16->UseVisualStyleBackColor = false;
+			this->btn_8_16->Click += gcnew System::EventHandler(this, &Okno_uzytkownicy::btn_8_16_Click);
+			// 
+			// btn_7_15
+			// 
+			this->btn_7_15->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(6)), static_cast<System::Int32>(static_cast<System::Byte>(174)),
+				static_cast<System::Int32>(static_cast<System::Byte>(244)));
+			this->btn_7_15->FlatAppearance->BorderSize = 0;
+			this->btn_7_15->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btn_7_15->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->btn_7_15->ForeColor = System::Drawing::Color::WhiteSmoke;
+			this->btn_7_15->Location = System::Drawing::Point(226, 42);
+			this->btn_7_15->Name = L"btn_7_15";
+			this->btn_7_15->Size = System::Drawing::Size(99, 29);
+			this->btn_7_15->TabIndex = 21;
+			this->btn_7_15->Text = L"7:00 - 15:00";
+			this->btn_7_15->UseVisualStyleBackColor = false;
+			this->btn_7_15->Click += gcnew System::EventHandler(this, &Okno_uzytkownicy::btn_7_15_Click);
+			// 
+			// txt_niedz_do
+			// 
+			this->txt_niedz_do->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_niedz_do->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_niedz_do->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_niedz_do->Location = System::Drawing::Point(170, 186);
+			this->txt_niedz_do->Name = L"txt_niedz_do";
+			this->txt_niedz_do->Size = System::Drawing::Size(50, 25);
+			this->txt_niedz_do->TabIndex = 41;
+			// 
+			// txt_niedz_od
+			// 
+			this->txt_niedz_od->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_niedz_od->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_niedz_od->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_niedz_od->Location = System::Drawing::Point(109, 186);
+			this->txt_niedz_od->Name = L"txt_niedz_od";
+			this->txt_niedz_od->Size = System::Drawing::Size(50, 25);
+			this->txt_niedz_od->TabIndex = 40;
+			// 
+			// txt_sob_do
+			// 
+			this->txt_sob_do->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_sob_do->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_sob_do->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_sob_do->Location = System::Drawing::Point(170, 162);
+			this->txt_sob_do->Name = L"txt_sob_do";
+			this->txt_sob_do->Size = System::Drawing::Size(50, 25);
+			this->txt_sob_do->TabIndex = 39;
+			// 
+			// txt_sob_od
+			// 
+			this->txt_sob_od->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_sob_od->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_sob_od->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_sob_od->Location = System::Drawing::Point(109, 162);
+			this->txt_sob_od->Name = L"txt_sob_od";
+			this->txt_sob_od->Size = System::Drawing::Size(50, 25);
+			this->txt_sob_od->TabIndex = 38;
+			// 
+			// txt_pt_do
+			// 
+			this->txt_pt_do->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_pt_do->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_pt_do->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_pt_do->Location = System::Drawing::Point(170, 138);
+			this->txt_pt_do->Name = L"txt_pt_do";
+			this->txt_pt_do->Size = System::Drawing::Size(50, 25);
+			this->txt_pt_do->TabIndex = 37;
+			// 
+			// txt_pt_od
+			// 
+			this->txt_pt_od->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_pt_od->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_pt_od->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_pt_od->Location = System::Drawing::Point(109, 138);
+			this->txt_pt_od->Name = L"txt_pt_od";
+			this->txt_pt_od->Size = System::Drawing::Size(50, 25);
+			this->txt_pt_od->TabIndex = 36;
+			// 
+			// txt_czw_do
+			// 
+			this->txt_czw_do->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_czw_do->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_czw_do->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_czw_do->Location = System::Drawing::Point(170, 114);
+			this->txt_czw_do->Name = L"txt_czw_do";
+			this->txt_czw_do->Size = System::Drawing::Size(50, 25);
+			this->txt_czw_do->TabIndex = 35;
+			// 
+			// txt_czw_od
+			// 
+			this->txt_czw_od->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_czw_od->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_czw_od->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_czw_od->Location = System::Drawing::Point(109, 114);
+			this->txt_czw_od->Name = L"txt_czw_od";
+			this->txt_czw_od->Size = System::Drawing::Size(50, 25);
+			this->txt_czw_od->TabIndex = 34;
+			// 
+			// txt_sr_do
+			// 
+			this->txt_sr_do->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_sr_do->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_sr_do->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_sr_do->Location = System::Drawing::Point(170, 90);
+			this->txt_sr_do->Name = L"txt_sr_do";
+			this->txt_sr_do->Size = System::Drawing::Size(50, 25);
+			this->txt_sr_do->TabIndex = 33;
+			// 
+			// txt_sr_od
+			// 
+			this->txt_sr_od->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_sr_od->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_sr_od->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_sr_od->Location = System::Drawing::Point(109, 90);
+			this->txt_sr_od->Name = L"txt_sr_od";
+			this->txt_sr_od->Size = System::Drawing::Size(50, 25);
+			this->txt_sr_od->TabIndex = 32;
+			// 
+			// txt_wt_do
+			// 
+			this->txt_wt_do->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_wt_do->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_wt_do->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_wt_do->Location = System::Drawing::Point(170, 66);
+			this->txt_wt_do->Name = L"txt_wt_do";
+			this->txt_wt_do->Size = System::Drawing::Size(50, 25);
+			this->txt_wt_do->TabIndex = 31;
+			// 
+			// txt_wt_od
+			// 
+			this->txt_wt_od->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_wt_od->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_wt_od->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_wt_od->Location = System::Drawing::Point(109, 66);
+			this->txt_wt_od->Name = L"txt_wt_od";
+			this->txt_wt_od->Size = System::Drawing::Size(50, 25);
+			this->txt_wt_od->TabIndex = 30;
+			// 
+			// txt_pon_do
+			// 
+			this->txt_pon_do->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_pon_do->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_pon_do->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_pon_do->Location = System::Drawing::Point(170, 42);
+			this->txt_pon_do->Name = L"txt_pon_do";
+			this->txt_pon_do->Size = System::Drawing::Size(50, 25);
+			this->txt_pon_do->TabIndex = 29;
+			// 
+			// txt_pon_od
+			// 
+			this->txt_pon_od->BackColor = System::Drawing::SystemColors::Window;
+			this->txt_pon_od->Font = (gcnew System::Drawing::Font(L"Poppins", 9));
+			this->txt_pon_od->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->txt_pon_od->Location = System::Drawing::Point(109, 42);
+			this->txt_pon_od->Name = L"txt_pon_od";
+			this->txt_pon_od->Size = System::Drawing::Size(50, 25);
+			this->txt_pon_od->TabIndex = 21;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Poppins", 10));
+			this->label4->Location = System::Drawing::Point(6, 186);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(73, 25);
+			this->label4->TabIndex = 28;
+			this->label4->Text = L"Niedziela";
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Poppins", 10));
+			this->label15->Location = System::Drawing::Point(178, 20);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(31, 25);
+			this->label15->TabIndex = 27;
+			this->label15->Text = L"Do";
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Poppins", 10));
+			this->label14->Location = System::Drawing::Point(110, 20);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(32, 25);
+			this->label14->TabIndex = 26;
+			this->label14->Text = L"Od";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Poppins", 10));
+			this->label12->Location = System::Drawing::Point(5, 162);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(61, 25);
+			this->label12->TabIndex = 25;
+			this->label12->Text = L"Sobota";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Poppins", 10));
+			this->label13->Location = System::Drawing::Point(6, 138);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(53, 25);
+			this->label13->TabIndex = 24;
+			this->label13->Text = L"Pi¹tek";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Poppins", 10));
+			this->label10->Location = System::Drawing::Point(6, 114);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(75, 25);
+			this->label10->TabIndex = 23;
+			this->label10->Text = L"Czwartek";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Poppins", 10));
+			this->label11->Location = System::Drawing::Point(6, 90);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(52, 25);
+			this->label11->TabIndex = 22;
+			this->label11->Text = L"Œroda";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Poppins", 10));
+			this->label9->Location = System::Drawing::Point(6, 66);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(61, 25);
+			this->label9->TabIndex = 21;
+			this->label9->Text = L"Wtorek";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Poppins", 10));
+			this->label8->Location = System::Drawing::Point(5, 42);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(97, 25);
+			this->label8->TabIndex = 20;
+			this->label8->Text = L"Poniedzia³ek";
 			// 
 			// Okno_uzytkownicy
 			// 
@@ -336,6 +785,7 @@ namespace SalonSamochodowy {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(834, 561);
+			this->Controls->Add(this->gb_godzinyPracy);
 			this->Controls->Add(this->chb_pracownik);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -354,6 +804,8 @@ namespace SalonSamochodowy {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Okno_uzytkownicy";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dg_uzytkownicy))->EndInit();
+			this->gb_godzinyPracy->ResumeLayout(false);
+			this->gb_godzinyPracy->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -376,6 +828,16 @@ namespace SalonSamochodowy {
 
 		txt_szukaj->ForeColor = Color::Gray;
 		txt_szukaj->Text = "Wpisz dane u¿ytkownika";
+	}
+
+	private: void uzupelnij_czas_pracy(int czasPoczatkowy) {
+		array<TextBox^>^ czas_pocz = { txt_pon_od, txt_wt_od, txt_sr_od, txt_czw_od, txt_pt_od, txt_sob_od, txt_niedz_od };
+		array<TextBox^>^ czas_kon = { txt_pon_do, txt_wt_do, txt_sr_do, txt_czw_do, txt_pt_do, txt_sob_do, txt_niedz_do };
+
+		for (int i = 0; i < 7; i++) {
+			czas_pocz[i]->Text = czasPoczatkowy + ":00";
+			czas_kon[i]->Text = czasPoczatkowy + 8 + ":00";
+		}
 	}
 
 	private: System::Void txt_szukaj_Enter(System::Object^ sender, System::EventArgs^ e) {
@@ -421,6 +883,47 @@ namespace SalonSamochodowy {
 			txt_nazwisko->Text = dg_uzytkownicy->Rows[e->RowIndex]->Cells["nazwisko"]->Value->ToString();
 			txt_login->Text = dg_uzytkownicy->Rows[e->RowIndex]->Cells["login"]->Value->ToString();
 			chb_pracownik->Checked = Convert::ToBoolean(dg_uzytkownicy->Rows[e->RowIndex]->Cells["pracownik"]->Value);
+
+			if (chb_pracownik->Checked == true) {
+				gb_godzinyPracy->Visible = true;
+
+				MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
+				MySqlCommand^ zapytanie = gcnew MySqlCommand("SELECT pon_od, pon_do, wt_od, wt_do, sr_od, sr_do, czw_od, czw_do, pt_od, pt_do, sob_od, sob_do, niedz_od, niedz_do FROM godziny WHERE uzytkownik_id = " + id_rekordu + ";", polaczenie);
+
+				MySqlDataReader^ odczyt;
+
+				try {
+					polaczenie->Open();
+					odczyt = zapytanie->ExecuteReader();
+					if (odczyt->Read() == true) {
+						txt_pon_od->Text = odczyt->GetString(0);
+						txt_pon_do->Text = odczyt->GetString(1);
+						txt_wt_od->Text = odczyt->GetString(2);
+						txt_wt_do->Text = odczyt->GetString(3);
+						txt_sr_od->Text = odczyt->GetString(4);
+						txt_sr_do->Text = odczyt->GetString(5);
+						txt_czw_od->Text = odczyt->GetString(6);
+						txt_czw_do->Text = odczyt->GetString(7);
+						txt_pt_od->Text = odczyt->GetString(8);
+						txt_pt_do->Text = odczyt->GetString(9);
+						txt_sob_od->Text = odczyt->GetString(10);
+						txt_sob_do->Text = odczyt->GetString(11);
+						txt_niedz_od->Text = odczyt->GetString(12);
+						txt_niedz_do->Text = odczyt->GetString(13);
+					}
+					else {
+						Narzedzia::wyczysc_textboxy_groupBox(gb_godzinyPracy);
+					}
+					polaczenie->Close();
+				}
+				catch (Exception^ ex) {
+					MessageBox::Show(ex->Message);
+				}
+
+			}
+			else {
+				gb_godzinyPracy->Visible = false;
+			}
 		}
 
 		btn_edytuj->Visible = true;
@@ -444,6 +947,11 @@ namespace SalonSamochodowy {
 		try {
 			if (MessageBox::Show("Czy na pewno usun¹æ u¿ytkownika " + txt_login->Text + "?", "Uwaga!!!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 
+
+
+				polecenie->CommandText = "DELETE FROM godziny WHERE uzytkownik_id = " + id_rekordu + ";";
+				polecenie->ExecuteNonQuery();
+
 				polecenie->CommandText = "DELETE FROM uzytkownicy WHERE uzytkownik_id = " + id_rekordu + ";";
 				polecenie->ExecuteNonQuery();
 
@@ -461,6 +969,7 @@ namespace SalonSamochodowy {
 		polaczenie->Close();
 		Poloczenie::odswiez_datagird(dg_uzytkownicy, "SELECT uzytkownik_id, imie, nazwisko, login, pracownik FROM uzytkownicy ;");
 		Narzedzia::wyczysc_textboxy(this);
+		Narzedzia::wyczysc_textboxy_groupBox(gb_godzinyPracy);
 		ukryj_przyciski();
 	}
 
@@ -489,8 +998,24 @@ namespace SalonSamochodowy {
 		polecenie->Transaction = transkacja;
 
 		try {
+			polecenie->CommandText = "SELECT * FROM godziny WHERE uzytkownik_id = " + id_rekordu + ";";
+			MySqlDataReader^ wynik = polecenie->ExecuteReader();
+
+			bool rezultat = wynik->HasRows;
+			wynik->Close();
+
 			polecenie->CommandText = "Update uzytkownicy SET imie='" + txt_imie->Text + "', nazwisko='" + txt_nazwisko->Text + "', login = '" + txt_login->Text + "', haslo = '" + txt_login->Text + "', pracownik = " + rodzaj_pracownika + " WHERE uzytkownik_id = '" + id_rekordu + "';";
 			polecenie->ExecuteNonQuery();
+
+			if (rezultat == true && chb_pracownik->Checked == true) {
+				polecenie->CommandText = "UPDATE godziny SET pon_od='" + txt_pon_od->Text + "', pon_do='" + txt_pon_do->Text + "', wt_od='" + txt_wt_od->Text + "', wt_do='" + txt_wt_do->Text + "', sr_od='" + txt_sr_od->Text + "', sr_do='" + txt_sr_do->Text + "', czw_od='" + txt_czw_od->Text + "', czw_do='" + txt_czw_do->Text + "', pt_od='" + txt_pt_od->Text + "', pt_do='" + txt_pt_do->Text + "', sob_od='" + txt_sob_od->Text + "', sob_do='" + txt_sob_do->Text + "', niedz_od='" + txt_niedz_od->Text + "', niedz_do='" + txt_niedz_do + "' WHERE uzytkownik_id = " + id_rekordu + ";";
+				polecenie->ExecuteNonQuery();
+			}
+			else if (rezultat == false && chb_pracownik->Checked == true) {
+				polecenie->CommandText = "INSERT INTO godziny SET uzytkownik_id=" + id_rekordu + ", pon_od='" + txt_pon_od->Text + "', pon_do='" + txt_pon_do->Text + "', wt_od='" + txt_wt_od->Text + "', wt_do='" + txt_wt_do->Text + "', sr_od='" + txt_sr_od->Text + "', sr_do='" + txt_sr_do->Text + "', czw_od='" + txt_czw_od->Text + "', czw_do='" + txt_czw_do->Text + "', pt_od='" + txt_pt_od->Text + "', pt_do='" + txt_pt_do->Text + "', sob_od='" + txt_sob_od->Text + "', sob_do='" + txt_sob_do->Text + "', niedz_od='" + txt_niedz_od->Text + "', niedz_do='" + txt_niedz_do + "';";
+				polecenie->ExecuteNonQuery();
+			}
+
 			MessageBox::Show("U¿tykownika " + txt_login->Text + " zosta³ zmodyfikowany");
 			transkacja->Commit();
 		}
@@ -501,6 +1026,7 @@ namespace SalonSamochodowy {
 		polaczenie->Close();
 		Poloczenie::odswiez_datagird(dg_uzytkownicy, "SELECT uzytkownik_id, imie, nazwisko, login, pracownik FROM uzytkownicy ;");
 		Narzedzia::wyczysc_textboxy(this);
+		Narzedzia::wyczysc_textboxy_groupBox(gb_godzinyPracy);
 		ukryj_przyciski();
 
 	}
@@ -527,7 +1053,15 @@ namespace SalonSamochodowy {
 		try {
 			polecenie->CommandText = "INSERT INTO uzytkownicy SET imie='" + txt_imie->Text + "', nazwisko='" + txt_nazwisko->Text + "', login='" + txt_login->Text + "', haslo='" + txt_login->Text + "', pracownik=" + rodzaj_pracownika + ";";
 			polecenie->ExecuteNonQuery();
-			MessageBox::Show("U¿ytkownik " + txt_login->Text + " zosta³ dodany od bazy danych");
+
+			if (chb_pracownik->Checked) {
+				polecenie->CommandText = "INSERT INTO godziny SET uzytkownik_id=last_insert_id(), pon_od='" + txt_pon_od->Text + "', pon_do='" + txt_pon_do->Text + "', wt_od='" + txt_wt_od->Text + "', wt_do='" + txt_wt_do->Text + "', sr_od='" + txt_sr_od->Text + "', sr_do='" + txt_sr_do->Text + "', czw_od='" + txt_czw_od->Text + "', czw_do='" + txt_czw_do->Text + "', pt_od='" + txt_pt_od->Text + "', pt_do='" + txt_pt_do->Text + "', sob_od='" + txt_sob_od->Text + "', sob_do='" + txt_sob_do->Text + "', niedz_od='" + txt_niedz_od->Text + "', niedz_do='" + txt_niedz_do + "';";
+				polecenie->ExecuteNonQuery();
+				MessageBox::Show("U¿ytkownik " + txt_login->Text + " zosta³ dodany od bazy danych");
+			}
+			else {
+				MessageBox::Show("U¿ytkownik " + txt_login->Text + " zosta³ dodany od bazy danych");
+			}
 			transkacja->Commit();
 		}
 		catch (Exception^ komunikat) {
@@ -537,8 +1071,32 @@ namespace SalonSamochodowy {
 		polaczenie->Close();
 		Poloczenie::odswiez_datagird(dg_uzytkownicy, "SELECT uzytkownik_id, imie, nazwisko, login, pracownik FROM uzytkownicy ;");
 		Narzedzia::wyczysc_textboxy(this);
+		Narzedzia::wyczysc_textboxy_groupBox(gb_godzinyPracy);
 		ukryj_przyciski();
 	}
 
+	private: System::Void chb_pracownik_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (chb_pracownik->Checked == true) {
+			gb_godzinyPracy->Visible = true;
+		}
+		if (chb_pracownik->Checked == false) {
+			gb_godzinyPracy->Visible = false;
+		}
+	}
+	private: System::Void btn_7_15_Click(System::Object^ sender, System::EventArgs^ e) {
+		uzupelnij_czas_pracy(7);
+	}
+	private: System::Void btn_8_16_Click(System::Object^ sender, System::EventArgs^ e) {
+		uzupelnij_czas_pracy(8);
+	}
+	private: System::Void btn_9_17_Click(System::Object^ sender, System::EventArgs^ e) {
+		uzupelnij_czas_pracy(9);
+	}
+	private: System::Void btn_10_18_Click(System::Object^ sender, System::EventArgs^ e) {
+		uzupelnij_czas_pracy(10);
+	}
+	private: System::Void btn_11_19_Click(System::Object^ sender, System::EventArgs^ e) {
+		uzupelnij_czas_pracy(11);
+	}
 	};
 }

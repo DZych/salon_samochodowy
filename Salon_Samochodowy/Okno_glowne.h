@@ -454,12 +454,15 @@ namespace SalonSamochodowy {
 	}
 	private: System::Void btn_pracownikSamochody_Click(System::Object^ sender, System::EventArgs^ e) {
 		openChildForm(gcnew Okno_pracowniksamochody());
+		ustaw_aktywna_zakladke(panel_menu, "  Pracownik - Samochody");
 	}
 	private: System::Void btn_jazdyProbne_Click(System::Object^ sender, System::EventArgs^ e) {
 		openChildForm(gcnew Okno_jazdy_probne());
+		ustaw_aktywna_zakladke(panel_menu, "  Jazdy próbne");
 	}
 	private: System::Void btn_sprzedaze_Click(System::Object^ sender, System::EventArgs^ e) {
 		openChildForm(gcnew Okno_sprzedaze());
+		ustaw_aktywna_zakladke(panel_menu, "  Sprzeda¿e");
 	}
 	};
 }

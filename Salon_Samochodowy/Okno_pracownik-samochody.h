@@ -481,10 +481,11 @@ namespace SalonSamochodowy {
 
 			if (rezultat == false) {
 
-				polecenie->CommandText = "INSERT INTO uzytkownicy_samochody SET uzytkownik_id = " + id_sprzedawcy + ", samochody_id = " + id_samochodu + ";";
-				polecenie->ExecuteNonQuery();
-				MessageBox::Show("Sprzedawca zosta³ dodany od samochodu");
-
+				if (MessageBox::Show("Czy na pewno dodaæ samochód?", "Uwaga!!!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+					polecenie->CommandText = "INSERT INTO uzytkownicy_samochody SET uzytkownik_id = " + id_sprzedawcy + ", samochody_id = " + id_samochodu + ";";
+					polecenie->ExecuteNonQuery();
+					MessageBox::Show("Sprzedawca zosta³ dodany od samochodu");
+				}
 			}
 			else if (rezultat == true) {
 				MessageBox::Show("Dany samochód ju¿ jest obs³ugiwany przez tego sprzedawce");
@@ -499,6 +500,8 @@ namespace SalonSamochodowy {
 		odswiez_przypisane_samochody();
 	}
 	private: System::Void dg_przypisaneSamochody_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+		id_samochodu = Convert::ToInt32(dg_przypisaneSamochody->Rows[e->RowIndex]->Cells[0]->Value);
 
 		MySqlConnection^ polaczenie = gcnew MySqlConnection(Poloczenie::konfiguracja);
 		MySqlCommand^ polecenie = polaczenie->CreateCommand();

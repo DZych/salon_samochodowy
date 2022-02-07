@@ -236,6 +236,7 @@ Class SalonSamochodowy.Narzedzia: AutoLayout, AnsiClass, Class, Public, BeforeFi
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     wyczysc_textboxy(Form): PrivateScope, Public, Static, HideBySig
+    wyczysc_textboxy_groupBox(GroupBox): PrivateScope, Public, Static, HideBySig
 Class SalonSamochodowy.Poloczenie: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -248,7 +249,6 @@ Class SalonSamochodowy.Okno_uzytkownicy: AutoLayout, AnsiClass, Class, Public, B
   Fields:
     Int32 id_rekordu : Public
     Int32 id_uzytkownika : Public
-    Int32 rodzaj_pracownika : Public
 Class SalonSamochodowy.Okno_zmiana_hasla: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
